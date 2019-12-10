@@ -1,9 +1,10 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import "colors";
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Montserrat", "Open Sans", "sans-serif";
+$headers-font: "Montserrat", "Open Sans", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -15,49 +16,41 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
 
+// LOGO LARGER
 h1 {
   font-size: 100px !important;
-  font-family: Montserrat;
-  font-style: bold;
+  font-weight: bold !important;
+  color: $hivie-pink;
 }
-
-
-// WORK WITH TA TO REFACTOR
-// LOGO LARGER
-
 
 // LOGO SMALL (NAVBAR)
 h2 {
-  font-size: 32px;
-  font-family: Montserrat;
-  font-style: bold;
+  font-size: 32px !important;
+  font-weight: bold !important;
+  color: $hivie-pink;
 }
 
 // Sub-Header Bold
 h3 {
-  font-size: 24px;
-  font-family: Montserrat;
-  font-style: bold;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: $hivie-blue;
 }
 
-// Category Headers Regular
-category {
-  font-size: 24px;
-  font-family: Montserrat;
-}
-
-
+// Convo Alias, Message Text,
 h4 {
   font-size: 18px;
-  font-family: Montserrat;
 }
 
+// Matches Alias, Message Preview,
 h5 {
-  font-size: 18px;
-  font-family: Montserrat;
-}
-
-//
-p {
   font-size: 16px;
 }
+
+// Smallest Text, Message Navbar Alias Name, Message Date, *Astricts
+p {
+  font-size: 12px;
+}
+
+
+
