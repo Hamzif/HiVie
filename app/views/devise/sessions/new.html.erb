@@ -1,20 +1,25 @@
-<h2>Log in</h2>
-
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
+                label: false,
+                placeholder: 'Email',
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
                 required: false,
+                label: false,
+                placeholder: 'Password',
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Login", class: 'btn btn-pink' %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Register", class: 'btn btn-transparent' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<!-- deleted the ugly 'log in' blue link that comes with devise -->
