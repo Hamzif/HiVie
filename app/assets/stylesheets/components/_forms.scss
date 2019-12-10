@@ -1,0 +1,18 @@
+.form-control {
+  border-radius: 5px;
+}
+
+// BELOW: deleted the margins except from the month input of birtday
+
+#user_birthday_2i{
+  margin-right: 0.25rem !important;
+  margin-left: 0.25rem !important;
+}
+
+.ml-1, .mx-1 {
+    margin-left: 0rem !important;
+}
+
+.mr-1, .mx-1 {
+    margin-right: 0rem !important;
+}
