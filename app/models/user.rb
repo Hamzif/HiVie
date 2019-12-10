@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :messages
+  has_many :matches, class_name: 'Match', foreign_key: 'user_one'
+  has_many :matches, class_name: 'Match', foreign_key: 'user_two'
 end
