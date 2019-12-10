@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_104607) do
     t.index ["user_one_id"], name: "index_matches_on_user_one_id"
     t.index ["user_two_id"], name: "index_matches_on_user_two_id"
   end
-
+  
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
@@ -72,5 +72,6 @@ ActiveRecord::Schema.define(version: 2019_12_10_104607) do
 
   add_foreign_key "matches", "users", column: "user_one_id"
   add_foreign_key "matches", "users", column: "user_two_id"
+
   add_foreign_key "messages", "users"
 end
