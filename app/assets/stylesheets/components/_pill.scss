@@ -1,22 +1,16 @@
-#pill-ghost {
-  color: #132D7E;
-  height: 35px;
+.pill {
   border: 1px solid #132D7E;
-  padding: 8px;
-  position: relative;
+  padding: 6px 24px;
   border-radius: 27px;
   min-width: 60px;
-  max-width: 100px;
+  max-width: 150px;
+}
+
+#pill-ghost {
+  color: #132D7E;
 }
 
 #pill-select {
   color: white;
   background-color: #132D7E;
-  height: 35px;
-  border: 1px solid #132D7E;
-  padding: 8px;
-  position: relative;
-  border-radius: 27px;
-  min-width: 60px;
-  max-width: 100px;
 }
