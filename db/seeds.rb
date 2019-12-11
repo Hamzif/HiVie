@@ -23,3 +23,7 @@ puts "created user_3"
 user_4 = User.create(email: 'taylor@gmail.com', password: "password", first_name: 'Taylor', last_name: 'Hill', username: 'Iamvictoriasecret',  city: 'Barcelona', birthday: '13/09/1997'.to_date, gender: 'female', sex_pref: 'male', age_pref: (20..30) , distance: 7, diagnosis_year: 2018)
 
 puts "created user_4"
+
+user_5 = User.create(email: 'monica@gmail.com', password: "password", first_name: 'Monica', last_name: 'Ben Barek', username: 'monique',  city: 'Barcelona', birthday: '13/10/1997'.to_date, gender: 'female', sex_pref: 'female', age_pref: (20..30) , distance: 7, diagnosis_year: 2018)
+
+puts "created user_5"

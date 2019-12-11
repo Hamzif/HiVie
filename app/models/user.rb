@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :characteristics, through: :user_characteristics
   has_many :matches, class_name: 'Match', foreign_key: 'user_one'
   has_many :matches, class_name: 'Match', foreign_key: 'user_two'
+
+  def age
+    ((Date.today - self.birthday) / 365).to_i
+  end
 end
