@@ -26,8 +26,9 @@
       <div class="form-actions">
         <%= link_to "Register", new_user_registration_path, class: 'button btn-transparent' %>
       </div>
+        <!-- Need to delete the 'log in' blue link that comes with devise -->
+        <%= render "devise/shared/links" %>
       <% end %>
-      <!-- deleted the ugly 'log in' blue link that comes with devise -->
     </div>
   </div>
 </div>
