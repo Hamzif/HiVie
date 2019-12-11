@@ -1,0 +1,4 @@
+class MatchesController < ApplicationController
+
+
+end
