@@ -1,8 +1,9 @@
 <div class="home-container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h1>HiVie</h1>
+      <h3>It's About How You Live</h3>
       <!-- Insert form here -->
-
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-login">
         <%= f.input :email,
@@ -23,11 +24,10 @@
         <%= f.button :submit, "Login", class: 'button btn-pink' %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Register", class: 'button btn-transparent' %>
+        <%= link_to "Register", new_user_registration_path, class: 'button btn-transparent' %>
       </div>
       <% end %>
-
-<!-- deleted the ugly 'log in' blue link that comes with devise -->
+      <!-- deleted the ugly 'log in' blue link that comes with devise -->
     </div>
   </div>
 </div>
