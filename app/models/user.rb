@@ -12,4 +12,6 @@ class User < ApplicationRecord
   def age
     ((Date.today - self.birthday) / 365).to_i
   end
+  mount_uploader :photo, PhotoUploader
+  validates :photo, presence: true
 end
