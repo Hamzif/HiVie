@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :characteristics, through: :user_characteristics
   has_many :matches, class_name: 'Match', foreign_key: 'user_one'
   has_many :matches, class_name: 'Match', foreign_key: 'user_two'
+  mount_uploader :photo, PhotoUploader
+  validates :photo, presence: true
 end

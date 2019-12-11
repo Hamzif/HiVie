@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users, controllers: {
+   registrations: 'users/registrations'
+  }
+  resources :profiles, only: [:edit, :update]
   root to: 'pages#home'
 
   resources :user_characteristics, only: [:update, :new]
