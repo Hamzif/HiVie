@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/show'
+  resources :users, only: [ :show ]
   devise_for :users
   root to: 'pages#home'
   get '/components', to: 'pages#components' # temporary route for displaying components
