@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+  <!-- <div class="form-inputs"> -->
+      <%#= simple_form_for (resources :user_characteristics, url: new_user_characteristic(user_characteristics)) do |f| %>
+        <%#= f.association :category, as: :check_boxes %>
+        <%#= f.input :name %>
+      <%# end %>
+    </div>
+
+    <div class="form-inputs check_boxes optional user_characteristics">
+      <label class="control-label check_boxes optional">Categories</label>
+
+      <input type="hidden" name="input">
+    </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+<%= simple_form_for([current_user, @user_characteristics ]) do |f| %>
+  <%#= f.collection_select(:title, Category.all, :title, :title) %>
+<% end %>
