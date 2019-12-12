@@ -1,0 +1,14 @@
+var userCharacteristicId = '<%= @user_characteristic.id %>'
+var characteristicId = '<%= @characteristic_id %>'
+
+var link = document.querySelector(`#characteristic-${characteristicId} a`)
+
+if (link.classList.contains("active")) {
+  link.classList.remove("active")
+  link.dataset.method = "post"
+  link.href = "/user_characteristics?characteristic_id=" + characteristicId
+} else {
+  link.classList.add("active")
+  link.dataset.method = "delete"
+  link.href = "/user_characteristics/" + userCharacteristicId
+}
