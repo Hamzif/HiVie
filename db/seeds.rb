@@ -6,6 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+Characteristic.destroy_all
+
+characteristic_1 = Characteristic.create(category: 'lifestyle', name: 'art')
+characteristic_2 = Characteristic.create(category: 'lifestyle', name: 'reading')
+characteristic_3 = Characteristic.create(category: 'lifestyle', name: 'foodie')
+
+puts "lifestyle seeds created"
+
+characteristic_4 = Characteristic.create(category: 'music', name: 'hip-hop')
+characteristic_5 = Characteristic.create(category: 'music', name: 'jazz')
+characteristic_6 = Characteristic.create(category: 'music', name: 'blues')
+
+puts "music seeds created"
+
+characteristic_7 = Characteristic.create(category: 'personality', name: 'cheerful')
+characteristic_8 = Characteristic.create(category: 'personality', name: 'calm')
+characteristic_9 = Characteristic.create(category: 'personality', name: 'caring')
+
+puts "personality seeds created"
+
+characteristic_10 = Characteristic.create(category: 'sports', name: 'football')
+characteristic_11 = Characteristic.create(category: 'sports', name: 'swimming')
+characteristic_12 = Characteristic.create(category: 'sports', name: 'golf')
+
+puts "sports seeds created"
+
 User.destroy_all
 
 user_1 = User.create(email: 'hamza@gmail.com', password: "password", first_name: 'Hamza', last_name: 'Ben Mbarek', username: 'Hamzification',  city: 'Barcelona', birthday: '08/04/1994'.to_date, gender: 'Male', sex_pref: 'Female', age_pref: (20..28) , distance: 10, diagnosis_year: 2017, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575631890/user_profile_images/T02NE0241-UPNR72TP0-ae9ed4ff472c-512_lfwhae.jpg')
