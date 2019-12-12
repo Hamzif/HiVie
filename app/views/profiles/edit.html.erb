@@ -2,31 +2,24 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-    <h2>Update <%= resource_name.to_s.humanize %> Info</h2>
+    <h2>Update <%= @user.first_name %>s' Preferences</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= simple_form_for(@user) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :sex_pref, required: true, autofocus: true %>
-      <%= f.input :age_pref, required: true, autofocus: true, input_html: { autocomplete: "age_pref" }%>
-      <%= f.input :distance, required: true, autofocus: true, input_html: { autocomplete: "distance" }%>
-      <%= f.input :diagnosis_year, required: true, autofocus: true, input_html: { autocomplete: "diagnosis_year" }%>
+      <div class="form-inputs">
+        <%= f.input :diagnosis_year, placeholder: '2008', input_html: { min: '1950', step: 'any', max: 'Date.today.year' } %>
+        <%= f.input :sex_pref, required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
+        <%= f.input :age_pref, collection: 18..90%>
+        <%= f.input :distance, collection: 1..100, as: :range%>
+      </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <div class="form-actions">
+        <h5><%= f.button :submit, "Update Preferences", class: 'btn btn-pink'%><h5>
+      </div>
       <% end %>
-    </div>
 
-    <div class="form-actions">
-      <h5><%= f.button :submit, "Update Preferences", class: 'btn btn-pink'%><h5>
-    </div>
-    <% end %>
-
-    <h5><%= link_to "Back", :back %><h5>
-
+      <h5><%= link_to "Back", :back %><h5>
     </div>
   </div>
 </div>
