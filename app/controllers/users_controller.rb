@@ -2,10 +2,20 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def show
     @user = User.find(params[:id])
-    # where(sex_pref: 'faire matcher avec le user_1 gender', meme logique pour
-    # age_pref)
     @potential_matches = []
-    @user_matches = @potential_matches << User.where(id: )
+    @potential_matches << User.where.not(id: current_user.id)
+                              .where(gender: current_user.sex_pref)
+                              .where(sex_pref: current_user.gender)
+    # .where(current_user.age_pref.includes)
+    @next_user = @potential_matches[0].sample
+  end
+
+  def update
+    raise
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    @user.save
+    # redirect_to match show page
   end
 end
 

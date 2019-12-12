@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
    registrations: 'users/registrations'
   }
+  resources :users, only: [ :show ]
   resources :profiles, only: [:edit, :update]
 
   resources :user_characteristics, only: [:new, :create, :destroy]

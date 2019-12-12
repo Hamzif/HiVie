@@ -10,10 +10,20 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <% unless current_page?(root_path) %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
+
+
+<%# if !current_page?(url_for(:controller => 'sessions', :action => '')) %>
+  <%#= render 'shared/navbar' %>
+  <%#= render 'shared/flashes' %>
+<%# end %>
