@@ -10,6 +10,14 @@ class UsersController < ApplicationController
     # .where(current_user.age_pref.includes)
     @next_user = @potential_matches[0].sample
   end
+
+  def update
+    raise
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    @user.save
+    # redirect_to match show page
+  end
 end
 
 # @users >> users filtres
