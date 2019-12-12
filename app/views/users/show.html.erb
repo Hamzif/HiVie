@@ -1,6 +1,22 @@
-<h1>Users#show</h1>
+<div class="card m-5" style="width: 24rem;">
 
-<%= @user.first_name %>
-<%= link_to 'Next', user_path(@next_user) %>
+<p> <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %></p>
+<div class="card-body">
+   <h3> <%= @user.first_name %> </h3>
+   <p> next <%= @next_user.email %> </p>
 
-<%= @next_user.email %>
+  <div class="d-flex justify-content-between mx-5">
+    <div>
+      <%= link_to user_path(@next_user) do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to user_path(@next_user) do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+</div>
