@@ -1,6 +1,20 @@
-<h1>Users#show</h1>
+<div class="d-flex justify-content-center align-items-center mt-5">
 
-<%= @user.first_name %>
-<%= link_to 'Next', user_path(@next_user) %>
+<ul>
+<li> <p> <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill %></p> </li>
+<li> <h3> <%= @user.first_name %> </h3> </li>
 
-<%= @next_user.email %>
+<li>
+<%= link_to user_path(@next_user) do %>
+    <i class="fas fa-times"></i>
+<% end %>
+
+<%= link_to user_path(@next_user) do %>
+    <i class="fas fa-heart"></i>
+<% end %>
+</li>
+
+
+<li><h3> <%= @next_user.email %> </h3></li>
+</ul>
+</div>
