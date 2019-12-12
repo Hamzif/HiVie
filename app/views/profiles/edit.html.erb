@@ -10,9 +10,23 @@
       <div class="form-inputs">
         <%= f.input :diagnosis_year, placeholder: '2008', input_html: { min: '1950', step: 'any', max: 'Date.today.year' } %>
         <%= f.input :sex_pref, required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
-        <%= f.input :min_age, collection: 18..90%>
-        <%= f.input :max_age, collection: 19..90%>
-        <%= f.input :distance, collection: 1..100, as: :range%>
+        <div class="row">
+          <div class="col">
+            <%= f.input :min_age, collection: 18..90%>
+          </div>
+          <div class="col">
+            <%= f.input :max_age, collection: 19..90%>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label class="select required" for="profiles_distance">Distance <abbr title="required">*</abbr></label>
+          </div>
+          <div class="col">
+            <input type="range" name="profiles[distance]" class="multi-range" id="distanceInputId" value="5" min="1" max="100" oninput="distanceOutputId.value = distanceInputId.value">
+            <output name="distanceOutputName" id="distanceOutputId"></output>
+          </div>
       </div>
 
       <div class="form-actions">
@@ -24,4 +38,3 @@
     </div>
   </div>
 </div>
-
