@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
   resources :profiles, only: [:edit, :update]
 
-  resources :user_characteristics, only: [:new, :update, :edit, :new, :create, :destroy]
+  resources :user_characteristics, only: [:new, :create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/components', to: 'pages#components'
