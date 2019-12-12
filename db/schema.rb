@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_104607) do
+ActiveRecord::Schema.define(version: 2019_12_12_160328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_104607) do
     t.bigint "user_two_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
     t.index ["user_one_id"], name: "index_matches_on_user_one_id"
     t.index ["user_two_id"], name: "index_matches_on_user_two_id"
   end

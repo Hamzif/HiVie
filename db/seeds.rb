@@ -52,7 +52,7 @@ user_11 = User.create(email: 'sima@gmail.com', password: "password", first_name:
 
 puts "created user_11"
 
-user_12 = User.create(email: 'haggus@gmail.com', password: "password", first_name: 'Haggus', last_name: 'Scotland', username: 'Ilovehaggus',  city: 'Barcelona', birthday: '06/02/1999'.to_date, gender: 'Male', sex_pref: 'Female', age_pref: (35..45) , distance: 6, diagnosis_year: 2009, remote_photo_url:'')
+user_12 = User.create(email: 'haggus@gmail.com', password: "password", first_name: 'Haggus', last_name: 'Scotland', username: 'Ilovehaggus',  city: 'Barcelona', birthday: '06/02/1999'.to_date, gender: 'Male', sex_pref: 'Female', age_pref: (35..45) , distance: 6, diagnosis_year: 2009, remote_photo_url:'https://avatars3.githubusercontent.com/u/40790744?s=400&v=4')
 
 puts "created user_12"
 
@@ -101,3 +101,11 @@ puts "created user_25"
 user_26 = User.create(email: 'solange@gmail.com', password: "password", first_name: 'Solange', last_name: 'Knowles', username: 'Ihatemysister',  city: 'Barcelona', birthday: '17/08/1981'.to_date, gender: 'Male', sex_pref: 'Female', age_pref: (25..35) , distance: 7, diagnosis_year: 2012, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575632170/user_profile_images/T02NE0241-UPLK2131N-e1b9f6081978-512_bcsftl.png')
 
 puts "created user_26"
+
+# MATCHES BELOW
+
+match_1 = Match.create(user_one_id: user_1.id, user_two_id: user_3.id)
+match_1 = Match.create(user_one_id: user_1.id, user_two_id: user_4.id)
+match_1 = Match.create(user_one_id: user_1.id, user_two_id: user_9.id)
+match_1 = Match.create(user_one_id: user_1.id, user_two_id: user_10.id)
+match_1 = Match.create(user_one_id: user_1.id, user_two_id: user_14.id)

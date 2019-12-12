@@ -1,20 +1,22 @@
-<div class="d-flex justify-content-center align-items-center mt-5">
+<div class="card m-5" style="width: 24rem;">
 
-<ul>
-<li> <p> <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill %></p> </li>
-<li> <h3> <%= @user.first_name %> </h3> </li>
+<p> <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %></p>
+<div class="card-body">
+   <h3> <%= @user.first_name %> </h3>
+   <p> next <%= @next_user.email %> </p>
 
-<li>
-<%= link_to user_path(@next_user) do %>
-    <i class="fas fa-times"></i>
-<% end %>
+  <div class="d-flex justify-content-between mx-5">
+    <div>
+      <%= link_to user_path(@next_user) do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to user_path(@next_user) do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= link_to user_path(@next_user) do %>
-    <i class="fas fa-heart"></i>
-<% end %>
-</li>
-
-
-<li><h3> <%= @next_user.email %> </h3></li>
-</ul>
 </div>
