@@ -1,0 +1,37 @@
+<div class="accordion" id="accordionExample">
+  <% UserCharacteristic::CATEGORIES.each_with_index do |category, index| %>
+    <div class="card">
+      <div class="card-header" id="heading<%= index %>">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+            <%= category %>
+          </button>
+        </h2>
+      </div>
+
+      <div id="collapse-<%= index %>" class="collapse" aria-labelledby="heading-<%= index %>" data-parent="#accordionExample">
+        <div class="card-body">
+          <% Characteristic.where(category: category).each do |characteristic| %>
+            <span id="characteristic-<%= characteristic.id %>">
+              <% if current_user.characteristics.include?(characteristic) %>
+                <% user_characteristic = current_user.user_characteristics.where(characteristic_id: characteristic.id).first %>
+
+                <%= link_to characteristic.name, user_characteristic_path(user_characteristic), class: 'btn btn-pill active', method: :delete, remote: true %>
+              <% else %>
+                <%= link_to characteristic.name, user_characteristics_path({ characteristic_id: characteristic.id }), method: :post, class: 'btn btn-pill', remote: true %>
+              <% end %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<button class=" button btn-pink">Almost there...</button>
+
+
+
+
+
+
