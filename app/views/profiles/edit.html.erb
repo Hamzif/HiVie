@@ -1,0 +1,27 @@
+<div class="home-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+
+    <h2>Update <%= @user.first_name %>s' Preferences</h2>
+
+    <%= simple_form_for(@user) do |f| %>
+    <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :diagnosis_year, placeholder: '2008', input_html: { min: '1950', step: 'any', max: 'Date.today.year' } %>
+        <%= f.input :sex_pref, required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
+        <%= f.input :min_age, collection: 18..90%>
+        <%= f.input :max_age, collection: 19..90%>
+        <%= f.input :distance, collection: 1..100, as: :range%>
+      </div>
+
+      <div class="form-actions">
+        <h5><%= f.button :submit, "Update Preferences", class: 'btn btn-pink'%><h5>
+      </div>
+      <% end %>
+
+      <h5><%= link_to "Back", :back %><h5>
+    </div>
+  </div>
+</div>
+
