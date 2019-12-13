@@ -3,11 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :messages
-  has_many :user_characteristics
+  has_many :messages, dependent: :destroy
+  has_many :user_characteristics, dependent: :destroy
   has_many :characteristics, through: :user_characteristics
-  has_many :matches, class_name: 'Match', foreign_key: 'user_one'
-  has_many :matches, class_name: 'Match', foreign_key: 'user_two'
+  has_many :matches, class_name: 'Match', foreign_key: 'user_one', dependent: :destroy
+  has_many :matches, class_name: 'Match', foreign_key: 'user_two', dependent: :destroy
 
   def age
     ((Date.today - self.birthday) / 365).to_i
