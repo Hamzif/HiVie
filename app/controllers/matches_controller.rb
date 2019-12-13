@@ -5,7 +5,6 @@ class MatchesController < ApplicationController
   end
 
   def create
-
     @potential_matches = []
     @potential_matches << User.where.not(id: current_user.id)
                               .where(gender: current_user.sex_pref)
@@ -14,11 +13,10 @@ class MatchesController < ApplicationController
     # .where(current_user.age_pref.includes)
     @next_user = @potential_matches[0].sample
 
-
     @match1 = Match.where(user_one_id: current_user.id)
-            .where(user_two_id: params[:user_id])
+                   .where(user_two_id: params[:user_id])
     @match2 = Match.where(user_two_id: current_user.id)
-            .where(user_one_id: params[:user_id])
+                   .where(user_one_id: params[:user_id])
     if @match1.any? || @match2.any?
       if @match1.any?
         @match1[0].status = "validated"
@@ -33,7 +31,4 @@ class MatchesController < ApplicationController
       redirect_to user_path(@next_user)
     end
   end
-
-
 end
-

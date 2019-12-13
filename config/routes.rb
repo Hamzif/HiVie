@@ -4,7 +4,7 @@ Rails.application.routes.draw do
    registrations: 'users/registrations'
   }
   resources :users, only: [ :show ] do
-    resources :matches, only: [:create]
+    resources :matches, only: [:create, :show]
   end
   resources :profiles, only: [:edit, :update]
   root to: 'pages#home'
