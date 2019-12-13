@@ -1,11 +1,20 @@
-<!-- accordion with pills and chategorys -->
+<!-- accordion with pills and categorys -->
 <div class="accordion" id="accordionExample">
   <% UserCharacteristic::CATEGORIES.each_with_index do |category, index| %>
     <div class="card">
       <div class="card-header" id="heading<%= index %>">
+
         <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
-            <i class="far fa-futbol"></i>
+          <button class="btn" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+            <% if category == 'personality'  %>
+              <i class="fas fa-user"></i>
+            <% elsif category == 'lifestyle' %>
+              <i class="fas fa-thumbs-up"></i>
+            <% elsif category == 'music' %>
+              <i class="fas fa-music"></i>
+            <% else category == 'sports' %>
+              <i class="far fa-futbol"></i>
+            <% end %>
             <!-- <i class="fas fa-comment-alt fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i> -->
             <%= category %>
           </button>
@@ -39,7 +48,6 @@
 </div>
 <!-- button pink -->
 <button class=" button btn-pink">Almost there...</button>
-
 
 
 
