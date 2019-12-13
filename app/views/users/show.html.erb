@@ -9,17 +9,15 @@
 
   <div class="d-flex justify-content-between mx-5">
     <div>
-      <%= link_to user_path(@next_user) do %>
-        <i class="fas fa-times"></i>
-      <% end %>
-    </div>
-    <div>
       <% if @next_user.empty? %>
         <%= link_to root_path do %>
           <i class="fas fa-heart"></i>
         <% end %>
       <% else %>
         <%= link_to user_path(@next_user) do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+        <%= link_to user_matches_path(@user), method: :post do %>
           <i class="fas fa-heart"></i>
         <% end %>
       <% end %>
