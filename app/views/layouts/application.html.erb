@@ -10,13 +10,20 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <!-- to be done later for chat navbar -->
     <%# unless current_page?(root_path) %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%# else %>
       <%#= render 'shared/navbar' %>
     <%# end %>
-    <%= yield %>
+
+    <!-- main container -->
+    <div class="main-container-hivie">
+      <%= yield %>
+    </div>
+    <!-- end main container -->
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
