@@ -1,4 +1,8 @@
-<!-- accordion with pills and categorys -->
+<!-- H1 title -->
+<div class="h3">
+  <h3>Your profile</h3>
+</div>
+<!-- Accordion cards -->
 <div class="accordion" id="accordionExample">
   <% UserCharacteristic::CATEGORIES.each_with_index do |category, index| %>
     <div class="card">
@@ -39,15 +43,17 @@
     </div>
   <% end %>
 </div>
-<!-- input decsribe yourself -->
-<div class="form-group  mt-3" >
+<!-- Basic texarea -->
+<div class="md-form mt-3">
   <div class="ml-4">
-    <label for="exampleFormControlTextarea1">Describe yourself...</label>
+    <label for="form7">Tell us more about yourself..</label>
   </div>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
 </div>
-<!-- button pink -->
-<button class=" button btn-pink">Almost there...</button>
+<%= link_to "Almost there...", edit_profile_path(current_user), class: 'button btn-pink w-100' %>
+
+
+
 
 
 
