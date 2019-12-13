@@ -1,9 +1,25 @@
+<!-- H1 title -->
+<div class="h3">
+  <h3>Your profile</h3>
+</div>
+<!-- Accordion cards -->
 <div class="accordion" id="accordionExample">
   <% UserCharacteristic::CATEGORIES.each_with_index do |category, index| %>
     <div class="card">
       <div class="card-header" id="heading<%= index %>">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+
+        <h2 class="mb-0 ">
+          <button class="btn" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+            <% if category == 'personality' %>
+              <i class="fas fa-user mr-2"></i>
+            <% elsif category == 'lifestyle' %>
+              <i class="fas fa-thumbs-up mr-2"></i>
+            <% elsif category == 'music' %>
+              <i class="fas fa-music mr-2"></i>
+            <% else category == 'sports' %>
+              <i class="far fa-futbol mr-2"></i>
+            <% end %>
+            <!-- <i class="fas fa-comment-alt fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i> -->
             <%= category %>
           </button>
         </h2>
@@ -27,8 +43,18 @@
     </div>
   <% end %>
 </div>
+<!-- Basic texarea -->
+<div class="md-form mt-3">
+  <div class="ml-4">
+    <label for="form7">Tell us more about yourself..</label>
+  </div>
+    <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
+</div>
+<%= link_to "Almost there...", edit_profile_path(current_user), class: 'button btn-pink w-100' %>
 
-<button class=" button btn-pink">Almost there...</button>
+
+
+
 
 
 

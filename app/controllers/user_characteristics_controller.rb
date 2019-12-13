@@ -2,6 +2,7 @@ class UserCharacteristicsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:home, :update, :new]
 
   def new
+    @user_characteristic = UserCharacteristic.new
   end
 
   def create
@@ -17,5 +18,11 @@ class UserCharacteristicsController < ApplicationController
     @user_characteristic.destroy
 
     render :new
+  end
+
+  private
+
+  def user_params
+    params.require(:users).permit(:id)
   end
 end

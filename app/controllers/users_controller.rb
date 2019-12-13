@@ -8,8 +8,7 @@ class UsersController < ApplicationController
                               .where(sex_pref: current_user.gender)
                               # .where((min_age >= current_user.age) && (max_age >= current_user.age))
     # .where(current_user.age_pref.includes)
-    @next_user = @potential_matches.sample
-
+    @next_user = @potential_matches[0].sample
   end
 
   def update
