@@ -4,11 +4,13 @@
   <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %>
   <div class="card-infos-users">
     <div>
+
       <h4> <%= @user.username %></h4>
       <h5><%= @user.city %></h5>
 
       </div>
     <h5 class="card-infos-users-age"> <%= @user.age  %>y.o</h5>
+
   </div>
 
 </div>
