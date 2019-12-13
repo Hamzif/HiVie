@@ -1,28 +1,60 @@
-<div class="card m-5" style="width: 24rem;">
+<div class="card-matching">
 
-<p> <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %></p>
-<div class="card-body">
 
-   <h3> <%= @user.first_name %> </h3>
-
-   <!-- <p> next <%#= @next_user.email %> </p> -->
-
-  <div class="d-flex justify-content-between mx-5">
+  <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %>
+  <div class="card-infos-users">
     <div>
-      <% if @next_user.empty? %>
-        <%= link_to root_path do %>
-          <i class="fas fa-heart"></i>
-        <% end %>
-      <% else %>
-        <%= link_to user_path(@next_user) do %>
-          <i class="fas fa-times"></i>
-        <% end %>
-        <%= link_to user_matches_path(@user), method: :post do %>
-          <i class="fas fa-heart"></i>
-        <% end %>
-      <% end %>
-    </div>
+      <h4> <%= @user.username %></h4>
+      <h5><%= @user.city %></h5>
+
+      </div>
+    <h5 class="card-infos-users-age"> <%= @user.age  %>y.o</h5>
   </div>
-</div>
 
 </div>
+    <div class="row ml-1 mr-1 justify-content-evenly" style="justify-content: space-evenly;">
+      <div class="btn btn-pill active col-3 m-1">
+        funny
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        hockey
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        loving
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        cheerful
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        bubbly
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        art
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        travel
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        hip hop
+      </div>
+      <div class="btn btn-pill active col-3 m-1">
+        soul
+      </div>
+    </div>
+      <!-- this is the heart and cross -->
+    <div class="d-flex justify-content-center mx-5">
+      <div>
+        <% if @next_user.empty? %>
+          <%= link_to root_path do %>
+            <i class="fas fa-heart m-5"></i>
+          <% end %>
+        <% else %>
+          <%= link_to user_path(@next_user) do %>
+            <i class="fas fa-times m-5"></i>
+          <% end %>
+          <%= link_to user_matches_path(@user), method: :post do %>
+            <i class="fas fa-heart m-5"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
