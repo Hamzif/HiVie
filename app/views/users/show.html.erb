@@ -1,11 +1,13 @@
 <div class="card-matching">
 
+
   <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %>
   <div class="card-infos-users">
     <div>
       <h4> <%= @user.username %></h4>
       <h5><%= @user.city %></h5>
-    </div>
+
+      </div>
     <h5 class="card-infos-users-age"> <%= @user.age  %>y.o</h5>
   </div>
 
@@ -42,13 +44,17 @@
       <!-- this is the heart and cross -->
     <div class="d-flex justify-content-center mx-5">
       <div>
-        <%= link_to user_path(@next_user) do %>
-          <i class="fas fa-times m-5"></i>
-        <% end %>
-      </div>
-      <div>
-        <%= link_to user_path(@next_user) do %>
-          <i class="fas fa-heart m-5"></i>
+        <% if @next_user.empty? %>
+          <%= link_to root_path do %>
+            <i class="fas fa-heart m-5"></i>
+          <% end %>
+        <% else %>
+          <%= link_to user_path(@next_user) do %>
+            <i class="fas fa-times m-5"></i>
+          <% end %>
+          <%= link_to user_matches_path(@user), method: :post do %>
+            <i class="fas fa-heart m-5"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
