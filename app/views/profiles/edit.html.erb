@@ -12,10 +12,10 @@
         <%= f.input :sex_pref, label: 'Match with:', required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
         <div class="row">
           <div class="col">
-            <%= f.input :min_age, collection: 18..90%>
+            <%= f.input :min_age, collection: 18..80%>
           </div>
           <div class="col">
-            <%= f.input :max_age, collection: 19..90%>
+            <%= f.input :max_age, collection: 19..80%>
           </div>
         </div>
 
@@ -30,7 +30,7 @@
         </div>
 
       <div class="form-actions">
-        <h5><%= f.submit 'update', class: 'btn btn-pink'%><h5>
+        <h5><%= f.submit 'Update Preferences', class: 'btn btn-pink w-100'%><h5>
       </div>
 
 
