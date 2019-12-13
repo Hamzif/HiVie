@@ -2,18 +2,24 @@
 
 <p> <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %></p>
 <div class="card-body">
+
    <h3> <%= @user.first_name %> </h3>
-   <p> next <%= @next_user.email %> </p>
+
+   <!-- <p> next <%#= @next_user.email %> </p> -->
 
   <div class="d-flex justify-content-between mx-5">
     <div>
-      <%= link_to user_path(@next_user) do %>
-        <i class="fas fa-times"></i>
-      <% end %>
-    </div>
-    <div>
-      <%= link_to user_matches_path(@user), method: :post do %>
-        <i class="fas fa-heart"></i>
+      <% if @next_user.empty? %>
+        <%= link_to root_path do %>
+          <i class="fas fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to user_path(@next_user) do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+        <%= link_to user_matches_path(@user), method: :post do %>
+          <i class="fas fa-heart"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
