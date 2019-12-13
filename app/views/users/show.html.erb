@@ -1,7 +1,7 @@
 <div class="card-matching">
 
 
-  <%= cl_image_tag @user.photo, height: 425, width: 344, crop: :fill, class: "card-img-top" %>
+  <%= cl_image_tag @user.photo, height: 355, width: 344, crop: :fill, class: "card-img-top" %>
   <div class="card-infos-users">
     <div>
 
@@ -14,21 +14,21 @@
   </div>
 
 </div>
-    <div class="row ml-1 mr-1 justify-content-evenly" style="justify-content: space-evenly;">
+    <div class="row mx-1 mb-0 mt-3 justify-content-evenly" style="justify-content: space-evenly;">
       <div class="btn btn-pill active col-3 m-1">
         funny
       </div>
       <div class="btn btn-pill active col-3 m-1">
-        hockey
+        sexy
       </div>
       <div class="btn btn-pill active col-3 m-1">
         loving
       </div>
       <div class="btn btn-pill active col-3 m-1">
-        cheerful
+        nice
       </div>
       <div class="btn btn-pill active col-3 m-1">
-        bubbly
+        smart
       </div>
       <div class="btn btn-pill active col-3 m-1">
         art
@@ -37,26 +37,36 @@
         travel
       </div>
       <div class="btn btn-pill active col-3 m-1">
-        hip hop
+        rap
       </div>
       <div class="btn btn-pill active col-3 m-1">
         soul
       </div>
     </div>
       <!-- this is the heart and cross -->
-    <div class="d-flex justify-content-center mx-5">
-      <div>
-        <% if @next_user.empty? %>
+    <div class="d-flex justify-content-center mx-5 mt-3">
+      <% unless @next_user %>
+        <div>
           <%= link_to root_path do %>
-            <i class="fas fa-heart m-5"></i>
+            <i class="fas fa-times mx-5"></i>
           <% end %>
-        <% else %>
+        </div>
+        <div>
+          <%= link_to root_path do %>
+            <i class="fas fa-heart mx-5"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <div>
           <%= link_to user_path(@next_user) do %>
-            <i class="fas fa-times m-5"></i>
+            <i class="fas fa-times mx-5"></i>
           <% end %>
-          <%= link_to user_matches_path(@user), method: :post do %>
-            <i class="fas fa-heart m-5"></i>
+        </div>
+        <div>
+          <%= link_to user_matches_path(current_user, {matching_user_id: @user.id}), method: :post do %>
+            <i class="fas fa-heart mx-5"></i>
           <% end %>
+          </div>
         <% end %>
       </div>
-    </div>
+

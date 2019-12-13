@@ -28,6 +28,7 @@ class MatchesController < ApplicationController
       @match = Match.create(user_one_id: current_user.id, user_two_id: params[:matching_user_id])
       redirect_to user_path(@next_user)
     end
+
   end
 
   def show
