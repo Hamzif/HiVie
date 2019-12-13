@@ -4,16 +4,16 @@
     <div class="card">
       <div class="card-header" id="heading<%= index %>">
 
-        <h2 class="mb-0">
+        <h2 class="mb-0 ">
           <button class="btn" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
-            <% if category == 'personality'  %>
-              <i class="fas fa-user"></i>
+            <% if category == 'personality' %>
+              <i class="fas fa-user mr-2"></i>
             <% elsif category == 'lifestyle' %>
-              <i class="fas fa-thumbs-up"></i>
+              <i class="fas fa-thumbs-up mr-2"></i>
             <% elsif category == 'music' %>
-              <i class="fas fa-music"></i>
+              <i class="fas fa-music mr-2"></i>
             <% else category == 'sports' %>
-              <i class="far fa-futbol"></i>
+              <i class="far fa-futbol mr-2"></i>
             <% end %>
             <!-- <i class="fas fa-comment-alt fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i> -->
             <%= category %>
@@ -41,7 +41,7 @@
 </div>
 <!-- input decsribe yourself -->
 <div class="form-group  mt-3" >
-  <div class="ml-3">
+  <div class="ml-4">
     <label for="exampleFormControlTextarea1">Describe yourself...</label>
   </div>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
