@@ -1,7 +1,5 @@
 <!-- H1 title -->
-<div class="h3">
-  <h3>Your profile</h3>
-</div>
+  <h3 class="black-profile-header mt-3 mb-3git" style="text-align: center">Your profile</h3>
 <!-- Accordion cards -->
 <div class="accordion" id="accordionExample">
   <% UserCharacteristic::CATEGORIES.each_with_index do |category, index| %>
@@ -50,7 +48,7 @@
   </div>
     <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
 </div>
-<%= link_to "Almost there...", edit_profile_path(current_user), class: 'button btn-pink w-100' %>
+<%= link_to "Almost there...", edit_profile_path(current_user), class: 'btn btn-pink w-100 mt-3' %>
 
 
 
