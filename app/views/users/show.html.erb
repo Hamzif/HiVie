@@ -12,7 +12,7 @@
       <% end %>
     </div>
     <div>
-      <%= link_to user_matches_path(@user), method: :post do %>
+      <%= link_to user_matches_path(current_user, {matching_user_id: @user.id}), method: :post do %>
         <i class="fas fa-heart"></i>
       <% end %>
     </div>

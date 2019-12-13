@@ -1,5 +1,4 @@
 class MatchesController < ApplicationController
-
   def new
     @match = Match.new
   end
@@ -14,21 +13,28 @@ class MatchesController < ApplicationController
     @next_user = @potential_matches[0].sample
 
     @match1 = Match.where(user_one_id: current_user.id)
-                   .where(user_two_id: params[:user_id])
+                   .where(user_two_id: params[:matching_user_id])
+                   .first
     @match2 = Match.where(user_two_id: current_user.id)
-                   .where(user_one_id: params[:user_id])
-    if @match1.any? || @match2.any?
-      if @match1.any?
-        @match1[0].status = "validated"
-        @match1[0].save
-      elsif @match2.any?
-        @match2[0].status = "validated"
-        @match2[0].save
-      end
-      redirect_to root_path
+                   .where(user_one_id: params[:matching_user_id])
+                   .first
+
+    @match = @match1 || @match2
+    if @match
+      @match.status = "validated"
+      @match.save
+      redirect_to match_path(@match, { matching_user_id: params[:matching_user_id] })
     else
-      @match = Match.create(user_one_id: current_user.id, user_two_id: params[:user_id])
+      @match = Match.create(user_one_id: current_user.id, user_two_id: params[:matching_user_id])
       redirect_to user_path(@next_user)
     end
+  end
+
+  def show
+    # @user1 = User.find(current_user.id)
+    # @user2 = User.find(params[:matching_user_id])
+    @match = Match.where(user_one_id: current_user.id, user_two_id: params[:matching_user_id]).first
+    @user1 = @match.user_one
+    @user2 = @match.user_two
   end
 end
