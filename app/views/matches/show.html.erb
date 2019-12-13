@@ -1,6 +1,13 @@
-<h3>It's a match!!</h3>
+<h3 class="text-center mb-5 mt-5">It's a match!!</h3>
 
+<div class="d-flex justify-content-center">
+<%= cl_image_tag @match.user_one.photo, crop: :fill, class: "avatar-x-large mr-5" %>
+<%= cl_image_tag @match.user_two.photo, crop: :fill, class: "avatar-x-large" %>
+</div>
 
+<h3 class="text-center mb-5 mt-5">Let's chat, and maybe more...</h3>
 
-<p> <%= @match.user_one.photo %></p>
-<p><%= @match.user_two.photo %></p>
+<%= link_to 'Let\'s chat', root_path, class: "btn button btn-pink" %>
+<div class="text-center">
+<%= link_to 'X', user_path(@next_user), class: "mt-5 btn btn-rounded btn-pink" %>
+</div>
