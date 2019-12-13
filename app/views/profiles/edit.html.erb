@@ -4,7 +4,7 @@
 
     <h2>Update <%= @user.first_name %>s Preferences</h2>
 
-    <%= simple_form_for(:profiles, url: { action: "update"}, method: :patch ) do |f| %>
+    <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
     <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -27,11 +27,13 @@
             <input type="range" name="profiles[distance]" class="multi-range" id="distanceInputId" value="5" min="1" max="100" oninput="distanceOutputId.value = distanceInputId.value">
             <output name="distanceOutputName" id="distanceOutputId"></output>
           </div>
-      </div>
+        </div>
 
       <div class="form-actions">
-        <h5><%= link_to "Update Preferences", user_path, class: 'btn btn-pink'%><h5>
+        <h5><%= f.submit 'update', class: 'btn btn-pink'%><h5>
       </div>
+
+
       <% end %>
 
       <h5><%= link_to "Back", :back %><h5>
