@@ -2,12 +2,13 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-      <h3 style="text-align: center;">Create Account</h3>
+      <h3 class="blue-profile-header">Create Account</h3>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <i class="fas fa-user-circle fa-5x justify-content-center" style="color: #132D7E"></i>
         <%= f.input :photo, label: "Profile Picture" %>
         <%= f.input :photo_cache, as: :hidden %>
         <div class="row">
@@ -28,7 +29,7 @@
       </div>
 
       <div class="form-actions mt-5">
-        <%= f.button :submit, "Next step!", class: 'button btn-pink' %>
+        <%= f.button :submit, "Submit", class: 'button btn-pink' %>
       </div>
       <% end %>
 
