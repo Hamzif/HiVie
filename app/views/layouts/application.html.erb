@@ -11,12 +11,11 @@
   </head>
   <body>
     <!-- to be done later for chat navbar -->
-    <%# unless current_page?(root_path) %>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%# else %>
-      <%#= render 'shared/navbar' %>
-    <%# end %>
+    <% unless current_page?(new_user_session_path)%>
+    <!-- add line to above statement >>> || current_page?(chat_path)  -->
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+    <% end %>
 
     <!-- main container -->
     <div class="main-container-hivie">
