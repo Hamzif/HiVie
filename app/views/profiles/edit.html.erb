@@ -8,6 +8,11 @@
     <%= f.error_notification %>
 
       <div class="form-inputs">
+        <div class="photo-upload text-center">
+          <i class="fas fa-user-circle fa-5x" style="color: #132D7E"></i>
+          <%= f.input :photo, label: "Profile Picture" %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
         <%= f.input :diagnosis_year, label: 'Living HIV+ Since:', placeholder: '2008', input_html: { min: '1950', step: 'any', max: 'Date.today.year' } %>
         <%= f.input :sex_pref, label: 'Match with:', required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
         <div class="row">
