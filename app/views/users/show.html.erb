@@ -1,20 +1,19 @@
 <div class="card-matching">
 
-
-  <%= cl_image_tag @user.photo, height: 355, width: 344, crop: :fill, class: "card-img-top" %>
+    <%= cl_image_tag @user.photo, height: 355, width: 344, crop: :fill, class: "card-img-top"%>
   <div class="card-infos-users">
     <div>
-
-      <h4> <%= @user.username %></h4>
+      <h4> <%= @user.username %>, <%= @user.age %></h4>
       <h5><%= @user.city %></h5>
-
-      </div>
-    <h5 class="card-infos-users-age"> <%= @user.age  %>y.o</h5>
-
+    </div>
+    <!-- <h5 class="card-infos-users-age"> <%= @user.age  %></h5> -->
   </div>
-
 </div>
-    <div class="row mx-1 mb-0 mt-3 justify-content-evenly" style="justify-content: space-evenly;">
+<div class="">
+  <h4>Bio:</h4>
+  <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit fuga nam minima provident nemo aperiam doloremque, in impedit, assumenda, corporis esse. Sequi adipisci, perferendis, et officiis nisi magnam iusto officia?</h5>
+</div>
+    <div class="row mx-1" style="justify-content: space-evenly;">
       <% unless @user.characteristics.nil? %>
         <% @user.characteristics.each do |char| %>
           <div class="btn btn-pill active col-3 m-1">
