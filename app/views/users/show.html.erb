@@ -15,33 +15,13 @@
 
 </div>
     <div class="row mx-1 mb-0 mt-3 justify-content-evenly" style="justify-content: space-evenly;">
-      <div class="btn btn-pill active col-3 m-1">
-        funny
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        sexy
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        loving
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        nice
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        smart
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        art
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        travel
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        rap
-      </div>
-      <div class="btn btn-pill active col-3 m-1">
-        soul
-      </div>
+      <% unless @user.characteristics.nil? %>
+        <% @user.characteristics.each do |char| %>
+          <div class="btn btn-pill active col-3 m-1">
+            <%= char.name %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
       <!-- this is the heart and cross -->
     <div class="d-flex justify-content-center mx-5 mt-3">
