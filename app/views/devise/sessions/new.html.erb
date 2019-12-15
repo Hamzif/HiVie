@@ -1,26 +1,19 @@
-<div class="home-container" style="padding-top: 100px">
+<div class="home-container" style="padding-top: 80px">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="text-align:center;">
       <h1>HiVie</h1>
       <h3>It's About How You Live</h3>
+        <br>
+      <h5 style="opacity: 0.6">A safe space for HIV+ persons to <br/>connect, share stories & find love</h5>
       <!-- Insert form here -->
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-login">
-        <%= f.input :email,
-        required: false,
-        autofocus: true,
-        label: false,
-        placeholder: 'Email',
-        input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-        required: false,
-        label: false,
-        placeholder: 'Password',
-        input_html: { autocomplete: "current-password" } %>
+        <%= f.input :email, required: false, autofocus: true, label: false, placeholder: 'Email', input_html: { autocomplete: "email" } %>
+        <%= f.input :password, required: false, label: false, placeholder: 'Password', input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="button-container" style="padding-top: 50px">
+      <div class="button-container">
         <div class="form-actions">
           <%= f.button :submit, "Login", class: 'button btn-pink' %>
         </div>
@@ -28,9 +21,11 @@
           <%= link_to "Register", new_user_registration_path, class: 'button btn-transparent' %>
         </div>
       </div>
-        <!-- Need to delete the 'log in' blue link that comes with devise -->
-        <%= render "devise/shared/links" %>
       <% end %>
+      <div class="shared-links" style="padding-top: 20px; opacity:.6">
+        <%= render "devise/shared/links" %>
+        <!-- Need to delete the 'log in' blue link that comes with devise -->
+      </div>
     </div>
   </div>
 </div>
