@@ -4,12 +4,17 @@
   border-radius: 27px;
   min-width: 60px;
   max-width: 150px;
+  color: #122C7E;
+
 
   &.active{
     background-color: #132D7E;
     color: white;
+
   }
 }
+
+
 
 #pill-ghost {
   color: #132D7E;
@@ -23,3 +28,4 @@
 .fa-user,.fa-thumbs-up,.fa-music,.fa-futbol {
   color: #122C7E;
 }
+

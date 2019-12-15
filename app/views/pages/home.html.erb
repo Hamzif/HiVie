@@ -1,6 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row h-100">
+    <div class="col my-auto">
+      <h2 class="text-center">Welcome to HiVie</h2>
 
-<% if user_signed_in? && @user.present? %>
-  <%= link_to "Go to swiper", user_path(@user), class: "btn btn primary"  %>
-<% end %>
+      <div class="text-center">
+        <h3>Keep your profile up to date and start swiping !</h3>
+      </div>
+
+      <% if user_signed_in? && @user.present? %>
+        <%= link_to "Let's swipe!", user_path(@user), class: "btn button btn-pink mt-5"  %>
+      <% end %>
+    </div>
+  </div>
+</div>
