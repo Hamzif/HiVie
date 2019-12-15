@@ -1,4 +1,4 @@
-<div class="home-container">
+<div class="home-container" style="padding-top: 100px">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="text-align:center;">
       <h1>HiVie</h1>
@@ -20,11 +20,13 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Login", class: 'button btn-pink' %>
-      </div>
-      <div class="form-actions">
-        <%= link_to "Register", new_user_registration_path, class: 'button btn-transparent' %>
+      <div class="button-container" style="padding-top: 50px">
+        <div class="form-actions">
+          <%= f.button :submit, "Login", class: 'button btn-pink' %>
+        </div>
+        <div class="form-actions">
+          <%= link_to "Register", new_user_registration_path, class: 'button btn-transparent' %>
+        </div>
       </div>
         <!-- Need to delete the 'log in' blue link that comes with devise -->
         <%= render "devise/shared/links" %>
