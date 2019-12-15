@@ -8,8 +8,11 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :photo, label: "Profile Picture"%>
-      <%= f.input :photo_cache, as: :hidden %>
+      <div class="photo-upload text-center">
+        <i class="fas fa-user-circle fa-5x" style="color: #132D7E"></i>
+        <%= f.input :photo, label: "Profile Picture" %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
       <%= f.input :email, required: true, autofocus: true %>
       <div class="row">
         <div class="col">
