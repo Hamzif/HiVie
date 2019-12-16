@@ -1,4 +1,16 @@
 class MatchesController < ApplicationController
+  def index
+    # list of all matches from which, user can create single chat conversation
+    matches1 = Match.where(user_one_id: current_user.id).where(status: "validated")
+    matches2 = Match.where(user_two_id: current_user.id).where(status: "validated")
+    @matches = matches1 + matches2
+  end
+
+
+  def index_requests
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
   def new
     @match = Match.new
   end
@@ -31,13 +43,13 @@ class MatchesController < ApplicationController
 
   end
 
+
   def show
     # @user1 = User.find(current_user.id)
     # @user2 = User.find(params[:matching_user_id])
     @match = Match.where(user_one_id: current_user.id, user_two_id: params[:matching_user_id]).first
     @user1 = @match.user_one
     @user2 = @match.user_two
-
 
     @potential_matches = []
     @potential_matches << User.where.not(id: current_user.id)

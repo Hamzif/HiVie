@@ -319,3 +319,9 @@ match_2 = Match.create(user_one_id: user_1.id, user_two_id: user_4.id)
 match_3 = Match.create(user_one_id: user_1.id, user_two_id: user_9.id)
 match_4 = Match.create(user_one_id: user_1.id, user_two_id: user_10.id)
 match_5 = Match.create(user_one_id: user_1.id, user_two_id: user_14.id)
+
+match_6 = Match.create(user_one_id: user_1.id, user_two_id: user_15.id, status: "validated")
+match_7 = Match.create(user_one_id: user_16.id, user_two_id: user_1.id, status: "validated")
+
+
+
