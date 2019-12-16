@@ -1,21 +1,29 @@
 .avatar {
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: #132D7E 1px solid;
   // avatar blue, need to set status to community
 }
 .avatar-large {
-  width: 103px;
+  width: 100px;
   height: 100px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border-radius: 50%;
 }
+
+.avatar-match-list {
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border-radius: 50%;
+}
+
 .avatar-bordered {
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: #EC5A73 1px solid;
+  border: #EC5A73 2px solid;
   .inline-block {
     display: inline-block; }
   .center {

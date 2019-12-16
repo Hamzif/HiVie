@@ -1,14 +1,13 @@
 <div class="home-container">
   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-
     <h3 class="blue-profile-header" style="text-align: left; border-bottom: 1px solid gray">Matches</h3>
-    <div class="matches-index container">
-      <div class="row">
-        <div class="col">
-          <div class= "match-avatar">
-            <% @matches.each do |match| %>
+    <div class="matches-index container scrolling-wrapper-flexbox">
+      <div class="row match-preview">
+        <% @matches.each do |match| %>
+          <div class="col">
+            <div class= "match-avatar">
               <%= link_to match_messages_path(match) do %>
-                <div class="match-username" style="text-align: center">
+                <div class="match-username" style="text-align: center; margin-top: 1px">
                 <% if match.user_one == current_user %>
                   <%= cl_image_tag match.user_two.photo, class: "avatar-bordered inline-block" %>
                   <p> <%= match.user_two.username %></p>
@@ -18,27 +17,34 @@
                 <% end %>
                 </div>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
 
-
-    <h3 class="blue-profile-header" style="text-align: left; border-bottom: 1px solid gray">Conversations</h3>
-    <div class="card-message-preview">
-      <div class="row">
+    <h3 class="blue-profile-header" style="text-align: left; border-bottom: 1px solid gray; margin: 0px 0px">Conversations</h3>
         <% @matches.each do |match| %>
-          <% if match.user_one == current_user %>
-            <img style="float:left" src=<%= cl_image_tag match.user_two.photo, class: "avatar-large" %>/>
-            <div class="card-heading"><p><%= match.user_two.username %></p></div>
-          <% else %>
-            <img style="float:left" src=<%= cl_image_tag match.user_one.photo, class: "avatar-large" %>/>
-            <div class="card-heading"><p><%= match.user_one.username %></p></div>
-          <% end %>
-          <p class="message-text" style="clear:both"> Message Preview<%#= messages.content.truncate(10) %></p>
+          <div class="preview-message-card d-flex justify-content-start"  style="border-bottom: 1px solid gray">
+            <% if match.user_one == current_user %>
+              <div>
+                <%= cl_image_tag match.user_two.photo, class: "avatar-match-list mb-2 mt-2" %>
+              </div>
+              <div class= "match-card-info align-self-center ml-4">
+                <div class="match-card-header"><h5><%= match.user_two.username %></h5></div>
+                <p class="message-text" style="clear:both">Lorem ipsum dolor sit amet, consectetur adipiscing elit<%#= messages.content.truncate(10) %></p>
+              </div>
+            <% else %>
+              <div>
+                <%= cl_image_tag match.user_one.photo, class: "avatar-match-list mb-2 mt-2" %>
+              </div>
+              <div class= "match-card-info align-self-center ml-4">
+                <div class="match-card-header"><h5><%= match.user_one.username %></h5></div>
+                <p class="message-text" style="clear:both">Lorem ipsum dolor sit amet, consectetur adipiscing elit <%#= messages.content.truncate(10) %></p>
+              </div>
+            <% end %>
+            </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
