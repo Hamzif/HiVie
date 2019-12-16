@@ -21,6 +21,6 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:sex_pref, :min_age, :max_age, :distance, :diagnosis_year, :user)
+    params.require(:user).permit(:sex_pref, :min_age, :max_age, :distance_pref, :diagnosis_year, :user)
   end
 end

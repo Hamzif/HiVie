@@ -9,7 +9,7 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :gender, :string
     add_column :users, :sex_pref, :string
     add_column :users, :age_pref, :numrange
-    add_column :users, :distance, :integer
+    add_column :users, :distance_pref, :integer
     add_column :users, :diagnosis_year, :integer
     add_column :users, :bio, :text
   end

@@ -1,5 +1,6 @@
   class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :index]
+
   def show
     @user = User.find(params[:id])
     @potential_matches = []
@@ -12,7 +13,6 @@
   end
 
   def update
-
     @user = User.find(params[:id])
     @user.update(user_params)
     @user.save
