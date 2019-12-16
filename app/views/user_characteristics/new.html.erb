@@ -1,5 +1,5 @@
 <!-- H1 title -->
-  <h3 class="black-profile-header mt-3 mb-3git" style="text-align: center">Your profile</h3>
+  <h3 class="black-profile-header mt-3 mb-3" style="text-align: center">Your profile</h3>
 <!-- Accordion cards -->
 <div class="accordion" id="accordionExample">
   <% UserCharacteristic::CATEGORIES.each_with_index do |category, index| %>
@@ -7,7 +7,7 @@
       <div class="card-header" id="heading<%= index %>">
 
         <h2 class="mb-0 ">
-          <button class="btn" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+          <button class="btn" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>" >
             <% if category == 'personality' %>
               <i class="fas fa-user mr-2"></i>
             <% elsif category == 'lifestyle' %>
