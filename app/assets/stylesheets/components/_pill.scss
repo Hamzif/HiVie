@@ -2,10 +2,12 @@
   border: 1px solid #132D7E;
   padding: 6px 24px;
   border-radius: 27px;
-  min-width: 60px;
-  max-width: 150px;
+  max-width: 100%;
   color: #122C7E;
-
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  font-size: 16px !important;
+  font-weight:bolder !important;
 
   &.active{
     background-color: #132D7E;
@@ -13,6 +15,8 @@
 
   }
 }
+// mb-0 mt-3
+  // width: auto !important;
 
 
 
