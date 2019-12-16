@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+    layout 'message_layout', only: [:index]
   def index
     # list of all matches from which, user can create single chat conversation
     matches1 = Match.where(user_one_id: current_user.id).where(status: "validated")
