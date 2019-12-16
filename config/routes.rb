@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :matches, only: [:create]
   end
 
-  resources :matches, only: :show
+  resources :matches, only: [:show, :index] do
+    resources :messages, only: [:index, :create]
+  end
 
   resources :profiles, only: [:edit, :update]
   root to: 'pages#home'
