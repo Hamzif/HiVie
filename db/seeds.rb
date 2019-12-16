@@ -48,9 +48,12 @@ characteristic_24 = Characteristic.create(category: 'Sports', name: 'Skiing')
 puts "sports seeds created"
 
 
-user_1 = User.create(email: 'hamza@gmail.com', password: "password", first_name: 'Hamza', last_name: 'Ben Mbarek', username: 'Hamzification',  city: 'Barcelona', birthday: '08/04/1994'.to_date, gender: 'Male', sex_pref: 'Female', distance: 10, diagnosis_year: 2017, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575631890/user_profile_images/T02NE0241-UPNR72TP0-ae9ed4ff472c-512_lfwhae.jpg')
+user_1 = User.create(email: 'hamza@gmail.com', password: "password", first_name: 'Hamza', last_name: 'Ben Mbarek', username: 'Hamzification',  city: 'Barcelona', birthday: '08/04/1994'.to_date, gender: 'Male', sex_pref: 'Female', distance: 10, diagnosis_year: 2017, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575631890/user_profile_images/T02NE0241-UPNR72TP0-ae9ed4ff472c-512_lfwhae.jpg',
+  bio: 'I haven’t dated much in recent years because I’ve been so focused on my career.
+        Now I’m ready to meet the person who will pull my head out of the books and bring me a bit of happiness.')
 
 puts "created user_1"
+
 UserCharacteristic.create(user: user_1, characteristic: characteristic_10)
 UserCharacteristic.create(user: user_1, characteristic: characteristic_20)
 UserCharacteristic.create(user: user_1, characteristic: characteristic_1)
@@ -68,7 +71,13 @@ UserCharacteristic.create(user: user_2, characteristic: characteristic_4)
 
 puts "created user_2"
 
-user_3 = User.create(email: 'bella@gmail.com', password: "password", first_name: 'Bella', last_name: 'Hadid', username: 'Iamabeauty',  city: 'Barcelona', birthday: '17/03/1997'.to_date, gender: 'Female', sex_pref: 'Male', distance: 8, diagnosis_year: 2016, remote_photo_url: 'https://kitt.lewagon.com/placeholder/users/humbeline')
+user_3 = User.create(email: 'bella@gmail.com', password: "password", first_name: 'Bella', last_name: 'Hadid', username: 'Iamabeauty',  city: 'Barcelona', birthday: '17/03/1997'.to_date, gender: 'Female', sex_pref: 'Male', distance: 8, diagnosis_year: 2016, remote_photo_url: 'https://kitt.lewagon.com/placeholder/users/humbeline',
+ bio: 'The girl doesn’t stop.” – My best friend Erin
+      “Excellent incisors. And she flosses.” – Dr. Dan, my dentist
+      “She’s not as crazy as she looks.” – My ex boyfriend Jake
+      “Fasten your seatbelts, it’s going to be a bumpy night!” – Betty Davis from All About Eve
+      (Ok, so Betty didn’t say it about me, but it fits somehow.)')
+
 UserCharacteristic.create(user: user_3, characteristic: characteristic_22)
 UserCharacteristic.create(user: user_3, characteristic: characteristic_9)
 UserCharacteristic.create(user: user_3, characteristic: characteristic_3)
@@ -78,7 +87,11 @@ UserCharacteristic.create(user: user_3, characteristic: characteristic_8)
 
 puts "created user_3"
 
-user_4 = User.create(email: 'taylor@gmail.com', password: "password", first_name: 'Taylor', last_name: 'Hill', username: 'Iamvictoriasecret',  city: 'Barcelona', birthday: '13/09/1997'.to_date, gender: 'Female', sex_pref: 'Male', distance: 7, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575632262/user_profile_images/T02NE0241-UPE8T7BMF-d221df9b7ce2-512_j6wwur.jpg')
+user_4 = User.create(email: 'taylor@gmail.com', password: "password", first_name: 'Taylor', last_name: 'Hill', username: 'Iamvictoriasecret',  city: 'Barcelona', birthday: '13/09/1997'.to_date, gender: 'Female', sex_pref: 'Male', distance: 7, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575632262/user_profile_images/T02NE0241-UPE8T7BMF-d221df9b7ce2-512_j6wwur.jpg',
+  bio: 'Sunday fundays > lazy Sundays
+        Skiing > snowboarding
+        Electric guitar < acoustic guitar (but I play both)')
+
 UserCharacteristic.create(user: user_4, characteristic: characteristic_14)
 UserCharacteristic.create(user: user_4, characteristic: characteristic_2)
 UserCharacteristic.create(user: user_4, characteristic: characteristic_4)
