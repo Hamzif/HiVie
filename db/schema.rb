@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 2019_12_12_160328) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
+    t.bigint "match_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_messages_on_match_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -74,5 +76,6 @@ ActiveRecord::Schema.define(version: 2019_12_12_160328) do
 
   add_foreign_key "matches", "users", column: "user_one_id"
   add_foreign_key "matches", "users", column: "user_two_id"
+  add_foreign_key "messages", "matches"
   add_foreign_key "messages", "users"
 end
