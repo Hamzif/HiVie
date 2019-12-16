@@ -1,8 +1,9 @@
 class MatchesController < ApplicationController
   def index
     # list of all matches from which, user can create single chat conversation
-    @matches1 = Match.where(user_one_id: current_user.id).where(status: "validated")
-    @matches2 = Match.where(user_two_id: current_user.id).where(status: "validated")
+    matches1 = Match.where(user_one_id: current_user.id).where(status: "validated")
+    matches2 = Match.where(user_two_id: current_user.id).where(status: "validated")
+    @matches = matches1 + matches2
   end
 
 

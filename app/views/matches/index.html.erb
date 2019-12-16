@@ -2,26 +2,43 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-    <h3 class="blue-profile-header" style="text-align: center;">Matches</h3>
-
-      <div class="matches-card">
-      <% @matches1.each do |match| %>
-        <a class="link-none" href="<%= match_messages_path %>">
-        <div class="match-card">
-          <div class="match-image">
-            <%= cl_image_tag match.photo, class: "match-image" %>
-          </div>
-          <div class="text-card">
-            <h3 class="match-username"><%=match.username%></h3>
-            <!--  <p class="match-message-preview"><%= %></p> -->
+    <h3 class="blue-profile-header" style="text-align: left; border-bottom: 1px solid gray">Matches</h3>
+    <div class="matches-index container">
+      <div class="row">
+        <div class="col-sm">
+          <div class= "match-avatar">
+            <% @matches.each do |match| %>
+              <%= link_to match_messages_path(match) do %>
+                <div class="match-username" style="text-align: center">
+                <% if match.user_one == current_user %>
+                  <%= cl_image_tag match.user_two.photo, class: "avatar-bordered" %>
+                  <p> <%= match.user_two.username %></p>
+                <% else %>
+                  <%= cl_image_tag match.user_one.photo, class: "avatar-bordered" %>
+                  <p> <%= match.user_one.username %></p>
+                <% end %>
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
-        </a>
-        <% end %>
       </div>
-
-    <h3 class="blue-profile-header" style="text-align: center;">Conversations</h3>
-
     </div>
+
+
+    <h3 class="blue-profile-header" style="text-align: left; border-bottom: 1px solid gray">Conversations</h3>
+    <div class="message-preview">
+    <% @matches.each do |match| %>
+      <% if match.user_one == current_user %>
+        <%= cl_image_tag match.user_two.photo, class: "avatar-large" %>
+        <p> <%= match.user_two.username %></p>
+      <% else %>
+        <%= cl_image_tag match.user_one.photo, class: "avatar-large" %>
+        <p> <%= match.user_one.username %></p>
+      <% end %>
+      <p class="message-text"> <%#= messages.content.truncate(10) %></p>
+    <% end %>
+    </div>
+
   </div>
 </div>
