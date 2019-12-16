@@ -1,12 +1,11 @@
 class MatchesController < ApplicationController
-    layout 'message_layout', only: [:index]
+  layout 'message_layout', only: [:index]
   def index
     # list of all matches from which, user can create single chat conversation
     matches1 = Match.where(user_one_id: current_user.id).where(status: "validated")
     matches2 = Match.where(user_two_id: current_user.id).where(status: "validated")
     @matches = matches1 + matches2
   end
-
 
   def index_requests
     @bookings = Booking.where(user_id: current_user.id)
@@ -41,9 +40,7 @@ class MatchesController < ApplicationController
       @match = Match.create(user_one_id: current_user.id, user_two_id: params[:matching_user_id])
       redirect_to user_path(@next_user)
     end
-
   end
-
 
   def show
     # @user1 = User.find(current_user.id)

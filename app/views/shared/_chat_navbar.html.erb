@@ -5,14 +5,12 @@
   </div>
 
   <div>
-    <%= link_to "root", class: "navbar-brand align-items-center mr-0" do %>
-      <h2>HiVie</h2>
+    <%= link_to "#", class: "navbar-brand align-items-center mr-0" do %>
+      <%= cl_image_tag @match.matched_user(current_user).photo, crop: :fill, class: "avatar-small" %>
     <% end %>
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <i class="fas fa-info-circle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></i>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -25,10 +23,8 @@
           <li class="nav-item">
             <%= link_to "Messages", matches_path, class: "nav-link" %>
           </li>
-          <li> <%= link_to "Edit Account", edit_user_registration_path, class: "nav-link" %> </li>
-          <li> <%= link_to "Update Interests", user_characteristic_path(current_user), class: "nav-link" %> </li>
-          <li> <%= link_to "Update Preferences", edit_profile_path(current_user), class: "nav-link" %> </li>
-          <li> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> </li>
+          <li> <%= link_to "Delete the match", edit_user_registration_path, class: "nav-link" %> </li>
+          <li> <%= link_to "Report an abuse", user_characteristic_path(current_user), class: "nav-link" %> </li>
 
       <% else %>
 

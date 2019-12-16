@@ -5,4 +5,8 @@ class Match < ApplicationRecord
   # def user_one
   #   User.find(self.user_one_id)
   # end
+
+  def matched_user(current_user)
+    current_user == user_one ? user_two : user_one
+  end
 end

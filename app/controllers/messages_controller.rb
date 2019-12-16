@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @messages = Message.where(match: params[:match_id])
+    @match = Match.find(params[:match_id])
   end
 
   def create
@@ -12,5 +13,4 @@ class MessagesController < ApplicationController
     @message.save
     redirect_to match_messages(params[:match_id])
   end
-
 end
