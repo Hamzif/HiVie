@@ -1,0 +1,27 @@
+<div class="home-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+
+    <h3 class="blue-profile-header" style="text-align: center;">Matches</h3>
+
+      <div class="matches-card">
+      <% @matches1.each do |match| %>
+        <a class="link-none" href="<%= match_messages_path %>">
+        <div class="match-card">
+          <div class="match-image">
+            <%= cl_image_tag match.photo, class: "match-image" %>
+          </div>
+          <div class="text-card">
+            <h3 class="match-username"><%=match.username%></h3>
+            <!--  <p class="match-message-preview"><%= %></p> -->
+          </div>
+        </div>
+        </a>
+        <% end %>
+      </div>
+
+    <h3 class="blue-profile-header" style="text-align: center;">Conversations</h3>
+
+    </div>
+  </div>
+</div>
