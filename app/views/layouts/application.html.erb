@@ -18,13 +18,12 @@
       <%#= render 'shared/navbar' %>
       <%#= render 'shared/flashes' %>
     <%# end %>
-    <% if current_page?(new_user_registration_path || new_user_characteristic_path || edit_profile_path) %>
-      <%= render 'shared/navbar_logo' %>
-    <% elsif current_page?(user_path) %>
-      <%= render 'shared/navbar' %>
-    <%# elsif current_page?(user_chat_path) %>
-      <%= render 'shared/chat_navbar' %>
-    <% end %>
+
+    <!-- Add the if for the match option to disappear on the dropdown
+    if the user is on the swiping page -->
+
+
+    <%= render 'shared/navbar' %>
 
     <!-- main container -->
     <div class="main-container-hivie">

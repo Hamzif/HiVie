@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  layout 'message_layout'
+
   def index
     @messages = Message.where(match: params[:match_id])
   end
