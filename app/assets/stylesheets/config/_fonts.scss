@@ -25,16 +25,16 @@ h1 {
 
 // LOGO SMALL (NAVBAR)
 h2 {
-  font-size: 32px !important;
+  font-size: 26px !important;
   font-weight: bold !important;
-  color: $hivie-pink;
+  color: $hivie-logo;
 }
 
 // REGISTER HEADERS BLUE
-h3.blue-profile-header {
+h3.profile-header {
   font-size: 32px !important;
   font-weight: bold !important;
-  color: $hivie-blue;
+  color: $hivie-purple;
   margin-top: 3px;
   margin-bottom: 13px;
   text-align: center;
@@ -44,7 +44,7 @@ h3.blue-profile-header {
 h3 {
   font-size: 24px !important;
   font-weight: bold !important;
-  color: $hivie-blue;
+  color: $hivie-purple;
 }
 
 // Convo Alias, Message Text,
@@ -65,7 +65,7 @@ p {
 h3.black-profile-header {
   font-size: 32px !important;
   font-weight: bold !important;
-  color: black;
+  color: $hivie-purple;
 }
 
 #basic-texarea {
