@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
+  # Reveal the complete user profile
   def reveal
     @user = User.find(params[:id])
     unless current_user.has_access_to?(@user)
-      flash[:alert] = 'No'
-      redirect_to some_path
+      flash[:alert] = 'Send a reveal request to see the full profile'
+      redirect_to matches_path
     end
   end
 
@@ -18,10 +19,9 @@ class UsersController < ApplicationController
                                 # .where("min_age < ?", current_user.age)
                                 # .where("max_age > ?", current_user.age)
                                 # .where((min_age >= current_user.age) && (max_age >= current_user.age))
-      # .where(current_user.age_pref.includes)
+                                # .where(current_user.age_pref.includes)
     @next_user = @potential_matches[0].sample
     @user = User.find(params[:id])
-
   end
 
   def update

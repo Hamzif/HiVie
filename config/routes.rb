@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
    registrations: 'users/registrations'
   }
-  resources :users, only: [ :show, :reveal] do
+
+  get '/reveal', to: 'users#reveal'
+  resources :users, only: [:show] do
     resources :matches, only: [:create]
   end
 

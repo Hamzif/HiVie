@@ -27,6 +27,8 @@ class User < ApplicationRecord
     end
   end
 
+private
+
   # confirm that a match exists
   def find_match_with(other_user)
     Match.find_by(user_one_id: [id, other_user.id], user_two_id: [id, other_user.id])
