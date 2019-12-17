@@ -20,6 +20,7 @@ $headers-font: "Montserrat", "Open Sans", "sans-serif";
 h1 {
   font-size: 100px !important;
   font-weight: bold !important;
+  font-family: Montserrat;
   color: $hivie-pink;
 }
 
@@ -27,6 +28,7 @@ h1 {
 h2 {
   font-size: 26px !important;
   font-weight: bold !important;
+  font-family: Montserrat;
   color: $hivie-logo;
 }
 
@@ -52,6 +54,13 @@ h4 {
   font-size: 18px !important;
 }
 
+.form-inputs {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: $hivie-purple;
+  font-family: Source Sans Pro;
+}
+
 // Matches Alias, Message Preview,
 h5 {
   font-size: 16px !important;
@@ -72,11 +81,6 @@ h3.black-profile-header {
   font-size: 1.5rem;
 }
 
-.form-inputs {
-  font-size: 20px !important;
-  font-weight: bold !important;
-  color: $hivie-purple;
-}
 
 
 
