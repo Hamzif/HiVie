@@ -1,17 +1,18 @@
 .btn-pill {
-  border: 1px solid #132D7E;
+  border: 2px solid $hivie-pink;
   padding: 6px 24px;
   border-radius: 27px;
   max-width: 100%;
-  color: #122C7E;
+  color: $hivie-pink;
   margin-top: 5px !important;
   margin-bottom: 5px !important;
   font-size: 16px !important;
   font-weight:bolder !important;
 
+
   &.active{
-    background-color: #132D7E;
-    color: white;
+    background-color: $hivie-pink;
+    color: white !important;
 
   }
 }
@@ -30,6 +31,19 @@
 }
 
 .fa-user,.fa-thumbs-up,.fa-music,.fa-futbol {
-  color: #122C7E;
+  color: $hivie-purple !important;
 }
 
+
+a.btn.btn-pill:hover {
+  color: $hivie-pink !important;
+  text-decoration: none;
+}
+
+a.btn.btn-pill:hover {
+
+&.active {
+  color: white !important;
+  text-decoration: none;
+  }
+}
