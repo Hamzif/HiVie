@@ -1,7 +1,7 @@
 .form-control{
   border-radius: 5px;
-  border-bottom-width: 2px !important;
 }
+
 .form-control:focus {
   color: #495057;
   background-color: #fff;
@@ -9,6 +9,7 @@
   outline: 0;
   box-shadow: 0 0 0 0.2rem #f4f4f4;
   border-bottom-color: #EC5A73 !important;
+  border-bottom-width: 2px !important;
 }
 
 
