@@ -3,11 +3,18 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
    registrations: 'users/registrations'
   }
-  resources :users, only: [ :show ] do
+
+  get '/reveal/:id', to: 'users#reveal', as: :reveal
+  resources :users, only: [:show] do
     resources :matches, only: [:create]
   end
 
-  resources :matches, only: [:show, :index, :destroy] do
+  # patch 'matches/:id/update_reveal', to: 'matches#update_reveal'
+
+  resources :matches, only: [:show, :index, :destroy ] do
+    member do
+      patch 'update_reveal'
+    end
     resources :messages, only: [:index, :create]
   end
 

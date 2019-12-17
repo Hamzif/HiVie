@@ -1,0 +1,65 @@
+<div class="card-matching">
+  <!-- add the lack gradient at the bottom, look what claire sent. And add the blure -->
+<!-- ("sample.jpg", blur: 600) -->
+  <div class="bgimg" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
+    <%= cl_image_tag @user.photo, height: 400, width: 344, crop: :fill, class: "card-img-top"%>
+  </div>
+
+  <div class="card-infos-users ml-2">
+    <div>
+      <div class="alias-font">
+        <%= @user.username %>, <%= @user.age %>
+      </div>
+      <div class="geo-location-font">
+        <%= @user.city %>
+      </div>
+    </div>
+    <!-- <h5 class="card-infos-users-age"> <%= @user.age  %></h5> -->
+  </div>
+</div>
+
+<!-- need to add the truncate to shorten the bio -->
+<div class="bio-font mt-3 mb-3">
+  <div class="10">
+  <% if @user.bio %>
+    <%= @user.bio.truncate(50) %>
+  <% else %>
+    No user bio
+  <% end %>
+  </div>
+</div>
+  <div class="row mx-1" style="justify-content: space-evenly;">
+    <% unless @user.characteristics.nil? %>
+      <% @user.characteristics.each do |char| %>
+        <div class="btn btn-pill active col-3 m-1">
+          <%= char.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+    <!-- this is the heart and cross -->
+  <div class="d-flex justify-content-center mx-5 mt-3">
+    <% unless @next_user %>
+      <div>
+        <%= link_to root_path do %>
+          <i class="fas fa-times mx-5"></i>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to root_path do %>
+          <i class="fas fa-heart mx-5"></i>
+        <% end %>
+      </div>
+    <% else %>
+      <div>
+        <%= link_to user_path(@next_user) do %>
+          <i class="fas fa-times mx-5"></i>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to user_matches_path(current_user, {matching_user_id: @user.id}), method: :post do %>
+          <i class="fas fa-heart mx-5"></i>
+        <% end %>
+        </div>
+      <% end %>
+    </div>

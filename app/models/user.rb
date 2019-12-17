@@ -16,4 +16,32 @@ class User < ApplicationRecord
   end
   mount_uploader :photo, PhotoUploader
   # validates :photo, presence: true
+
+  # if match exists, both users have access to the reveal show page of their profiles
+  def has_access_to?(other_user)
+    found_match = find_match_with(other_user)
+    if found_match
+      found_match.revealed?
+    else
+      false
+    end
+  end
+
+private
+
+  # confirm that a match exists
+  def find_match_with(other_user)
+    Match.find_by(user_one_id: [id, other_user.id], user_two_id: [id, other_user.id])
+    # @match1 = Match.where(user_one_id: current_user.id)
+    #                .where()
+    #                .first
+    # @match2 = Match.where(user_two_id: current_user.id)
+    #                .where(user_one_id: params[:matching_user_id])
+    #                .first
+  end
 end
+
+# current_user.matches
+
+
+# SELECT * FROM users WHERE id IN [1,2]

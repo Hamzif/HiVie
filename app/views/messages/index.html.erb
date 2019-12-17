@@ -11,9 +11,40 @@
 </div>
 
 
-
-
 <div class="input_msg text-center fixed-bottom" style="padding-top: 16px;">
   <%= render 'form', message: @message, match: @match %>
 </div>
+
+
+<!-- MODAL POP-UP -->
+<div class="modal fade" id="ModalRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Send Reveal Request </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Your match has requested to share their identity. Would you like to share yours?</p>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col">
+            <%= link_to "Accept", update_reveal_match_path(@match, match: {reveal_status: 'approved'}), method: :patch %>
+            <%= link_to "Decline", update_reveal_match_path(@match, match: {reveal_status: 'declined'}), method: :patch %>
+          </div>
+          <div class="col">
+            <%#= link_to "Decline", id: 'decline' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- MODAL POP-UP END -->
+
+
+
 
