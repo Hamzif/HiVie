@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet");
 @import "colors";
 
 // Define fonts for body and headers
-$body-font: "Montserrat", "Open Sans", "sans-serif";
+$body-font: "Source Sans Pro", "Open Sans", "sans-serif";
 $headers-font: "Montserrat", "Open Sans", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
@@ -25,16 +25,16 @@ h1 {
 
 // LOGO SMALL (NAVBAR)
 h2 {
-  font-size: 32px !important;
+  font-size: 26px !important;
   font-weight: bold !important;
-  color: $hivie-pink;
+  color: $hivie-logo;
 }
 
 // REGISTER HEADERS BLUE
-h3.blue-profile-header {
+h3.profile-header {
   font-size: 32px !important;
   font-weight: bold !important;
-  color: $hivie-blue;
+  color: $hivie-purple;
   margin-top: 3px;
   margin-bottom: 13px;
   text-align: center;
@@ -44,7 +44,7 @@ h3.blue-profile-header {
 h3 {
   font-size: 24px !important;
   font-weight: bold !important;
-  color: $hivie-blue;
+  color: $hivie-purple;
 }
 
 // Convo Alias, Message Text,
@@ -65,7 +65,7 @@ p {
 h3.black-profile-header {
   font-size: 32px !important;
   font-weight: bold !important;
-  color: black;
+  color: $hivie-purple;
 }
 
 #basic-texarea {
