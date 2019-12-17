@@ -64,6 +64,26 @@ h4 {
   font-family: Source Sans Pro;
 }
 
+// match page
+.alias-font {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: white;
+  font-family: Montserrat;
+}
+
+.geo-location-font {
+  font-size: 20px !important;
+  color: white;
+  font-family: Montserrat;
+}
+
+.bio-font {
+  font-size: 20px !important;
+  color: $hivie-purple;
+  font-family: Source Sans Pro;
+}
+
 // Matches Alias, Message Preview,
 h5 {
   font-size: 16px !important;

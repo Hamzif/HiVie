@@ -17,18 +17,8 @@
   // position: absolute;
 }
 
-.card-img-top {
-  background: linear-gradient(to top, black, 80%, black) !important;
-}
-// .regular-progression {
-
-// }
-
-// .gradient-img-match {
-//   background-image:
-//     linear-gradient(
-//       red, #f06d06
-//     );
+// .card-img-top {
+//   background: linear-gradient(to top, black, 80%, black) !important;
 // }
 
 // MATCH LIST CARDS
@@ -39,6 +29,11 @@
   .match-preview {
     flex: 0 0 auto;
   }
+}
+
+.bg-img {
+  background-size: cover;
+  background-position: center;
 }
 
 
