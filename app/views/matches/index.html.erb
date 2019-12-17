@@ -32,7 +32,10 @@
               </div>
               <div class= "match-card-info align-self-center ml-4">
                 <div class="match-card-header"><h5><%= match.user_two.username %></h5></div>
-                <p class="message-text" style="clear:both"><%= match.messages.last.content.truncate(50) %></p>
+                <p class="message-text" style="clear:both">
+                  <% if match.messages.any? %>
+                    <%= match.messages.last.content.truncate(50) %></p>
+                  <% end %>
               </div>
             <% else %>
               <div>
@@ -40,7 +43,9 @@
               </div>
               <div class= "match-card-info align-self-center ml-4">
                 <div class="match-card-header"><h5><%= match.user_one.username %></h5></div>
+                <% if match.messages.any? %>
                 <p class="message-text" style="clear:both"><%= match.messages.last.content.truncate(50) %></p>
+                <% end %>
               </div>
             <% end %>
             </div>
