@@ -9,8 +9,11 @@
   color: $hivie-logo;
 }
 
-#login {
+.fixed-button-home {
   position: absolute;
-  top: -80px;
-  right: 20px;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+transform: translateX(-50%)
+
 }
