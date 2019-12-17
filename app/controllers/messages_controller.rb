@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  layout 'message_layout'
+
   def index
     @messages_by_day = Message.where(match: params[:match_id]).group_by{ |message| message.created_at.strftime('%Y-%m-%d') }
     @message = Message.new
@@ -19,5 +21,4 @@ class MessagesController < ApplicationController
   def messages_params
     params.require(:message).permit(:content)
   end
-
 end

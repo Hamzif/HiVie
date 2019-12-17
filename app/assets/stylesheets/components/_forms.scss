@@ -1,6 +1,17 @@
-.form-control {
+.form-control{
   border-radius: 5px;
 }
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #f4f4f4;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #f4f4f4;
+  border-bottom-color: #EC5A73 !important;
+  border-bottom-width: 2px !important;
+}
+
 
 // BELOW: deleted the margins except from the month input of birtday
 
@@ -26,6 +37,16 @@
   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.form-inputs.focus {
-  border-color: $hivie-pink !important;
+
+ .form-control:valid:focus, .form-control.is-valid:focus {
+    border-bottom-width: 2px !important;
+    border-bottom-color: $hivie-pink !important;
+}
+
+ .form-control.is-valid:focus {
+  box-shadow: 0 0 0 0.2rem #f8f9fa !important;
+}
+
+.form-control.is-valid {
+  border-color: #f4f4f4 !important;
 }

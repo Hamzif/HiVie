@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-    <h3 class="blue-profile-header" style="text-align: center;"><%= @user.first_name %>s Match Preferences</h3>
+    <h3 class="profile-header" style="text-align: center;">Match Preferences</h3>
 
     <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
     <%= f.error_notification %>
@@ -21,10 +21,10 @@
 
         <div class="row">
           <div class="col">
-            <label class="select required" for="user_distance">Distance<abbr title="required">*</abbr></label>
+            <label class="select required" for="user_distance_pref">Distance<abbr title="required">*</abbr></label>
           </div>
           <div class="col">
-            <input type="range" name="user[distance]" class="multi-range" id="distanceInputId" value="5" min="1" max="100" oninput="distanceOutputId.value = distanceInputId.value">
+            <input type="range" name="user[distance_pref]" class="multi-range" id="distanceInputId" value="5" min="1" max="100" oninput="distanceOutputId.value = distanceInputId.value">
             <output name="distanceOutputName" id="distanceOutputId"></output>
           </div>
         </div>

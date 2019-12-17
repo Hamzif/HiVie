@@ -8,13 +8,13 @@
 
         <h2 class="mb-0 ">
           <button class="btn" type="button" data-toggle="collapse" data-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>" >
-            <% if category == 'personality' %>
+            <% if category == 'Personality' %>
               <i class="fas fa-user mr-2"></i>
-            <% elsif category == 'lifestyle' %>
+            <% elsif category == 'Lifestyle' %>
               <i class="fas fa-thumbs-up mr-2"></i>
-            <% elsif category == 'music' %>
+            <% elsif category == 'Music' %>
               <i class="fas fa-music mr-2"></i>
-            <% else category == 'sports' %>
+            <% else category == 'Sports' %>
               <i class="far fa-futbol mr-2"></i>
             <% end %>
             <!-- <i class="fas fa-comment-alt fa-2x p-3 mr-4 float-left black-text" aria-hidden="true"></i> -->
@@ -41,13 +41,7 @@
     </div>
   <% end %>
 </div>
-<!-- Basic texarea -->
-<div class="md-form mt-3">
-  <div class="ml-4">
-    <label for="form7">Tell us more about yourself..</label>
-  </div>
-    <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
-</div>
+
 
 <%= link_to "Almost there...", edit_profile_path(current_user), class: 'button btn btn-pink w-100 mt-3' %>
 

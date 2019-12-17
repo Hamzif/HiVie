@@ -2,11 +2,14 @@
   background: white;
   padding: 0.75rem 1rem;
   border-bottom: 1px ;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  // box-shadow: 0 1px 2px rgba(0,0,0,0.2); REMOVING BORDER
+  i{
+    font-size: 24px;
+    color: #7F7F7F;
+  }
 }
 
 .navbar-hivie {
-  justify-content: space-between;
   background: white;
 }
 
@@ -14,9 +17,14 @@
   flex-grow: 0;
 }
 
-// .navbar .navbar-brand {
-//   display: inline-block;
-//   text-align:center;
-//   float: none;
-//   vertical-align: top;
-// }
+
+.navbar-toggler{
+  border: none;
+  padding: 0;
+}
+
+#logo{
+  margin-bottom: 0;
+  font-size: 26px !important;
+}
+

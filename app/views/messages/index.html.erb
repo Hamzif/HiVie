@@ -1,9 +1,9 @@
+
 <div style="margin-bottom: 8vh;">
 <% @messages_by_day.each do |date, messages| %>
     <div class="date-msg">
      <p><%= date %></p>
     </div>
-
 
 <% messages.each do |message| %>
   <% if current_user == message.user %>

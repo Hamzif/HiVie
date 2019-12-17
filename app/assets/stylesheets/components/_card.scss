@@ -30,3 +30,15 @@
 //       red, #f06d06
 //     );
 // }
+
+// MATCH LIST CARDS
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  .match-preview {
+    flex: 0 0 auto;
+  }
+}
+
+
