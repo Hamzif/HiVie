@@ -20,8 +20,12 @@
 
 <!-- need to add the truncate to shorten the bio -->
   <div class="bio-font mt-3 mb-3">
-    <div class="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, esse. Eos nihil, nulla animi? Animi similique hic facilis quia, architecto ullam optio obcaecati, cumque neque omnis iusto, mollitia sequi iste.</div>
-    <%= @user.bio %>
+  <div class="10">
+    <% if @user.bio %>
+      <%= @user.bio.truncate(50) %>
+    <% else %>
+      No user bio
+    <% end %>
   </div>
     <div class="row mx-1" style="justify-content: space-evenly;">
       <% unless @user.characteristics.nil? %>

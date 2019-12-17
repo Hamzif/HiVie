@@ -19,10 +19,23 @@
 <% end %>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Launch</button>
+
+<div class="input_msg text-center fixed-bottom" style="padding-top: 16px;">
+  <%= simple_form_for [@match, @message] do |f| %>
+      <div class="content-send-message w-90 mx-2">
+        <%= f.input :content, label: false, placeholder: 'Write message', :input_html => {:rows => 1, :style => 'height: 50px'}, class: "rounded-sm" %>
+      </div>
+      <div class="btn-send-message">
+        <%= f.button :button, class: "button" do %>
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+
+
 <!-- MODAL POP-UP -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="ModalRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -49,21 +62,6 @@
   </div>
 </div>
   <!-- MODAL POP-UP END -->
-
-<div class="input_msg text-center fixed-bottom" style="padding-top: 16px;">
-  <%= simple_form_for [@match, @message] do |f| %>
-      <div class="content-send-message w-90 mx-2">
-        <%= f.input :content, label: false, placeholder: 'Write message', :input_html => {:rows => 1, :style => 'height: 50px'}, class: "rounded-sm" %>
-      </div>
-      <div class="btn-send-message">
-        <%= f.button :button, class: "button" do %>
-          <i class="fas fa-paper-plane" aria-hidden="true"></i>
-        <% end %>
-      </div>
-  <% end %>
-</div>
-
-
 
 
 
