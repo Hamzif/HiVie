@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_161049) do
     t.date "birthday"
     t.string "gender"
     t.string "sex_pref"
-    t.integer "distance_pref"
+    t.integer "distance"
     t.integer "diagnosis_year"
     t.text "bio"
     t.integer "min_age"
