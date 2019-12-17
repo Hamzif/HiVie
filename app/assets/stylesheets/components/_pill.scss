@@ -56,8 +56,13 @@ a.btn.btn-pill:hover {
   border-bottom-color: $hivie-purple !important;
   border-bottom-width: 1.5px !important;
 }
+.accordion-title {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: $hivie-purple !important;
+}
 
 .card {
   border:  0.5px solid rgba(0, 0, 0, -0.9);
-  // border-bottom-width: 1.5px ;
+
 }
