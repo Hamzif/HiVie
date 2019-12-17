@@ -4,9 +4,6 @@
     <%= link_to matches_path do %>
       <i class="fas fa-chevron-left"></i>
     <% end %>
-    <%#= link_to :back do %>
-      <!-- <i class="fas fa-chevron-left"></i> -->
-    <%# end %>
   </div>
 
   <div class="text-center">
@@ -23,12 +20,6 @@
 
       <% if user_signed_in? %>
 
-          <!-- <li class="nav-item"> -->
-            <%#= link_to "Match", user_path(User.all.sample), class: "nav-link" %>
-          <!-- </li> -->
-          <!-- <li class="nav-item"> -->
-            <%#= link_to "Messages", matches_path, class: "nav-link" %>
-          <!-- </li> -->
           <li> <%= link_to "Block & report", user_characteristic_path(current_user), class: "nav-link" %> </li>
           <li> <%= link_to "Unmatch", match_path(@match), method: :delete, class: "nav-link" %> </li>
           <li> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> </li>

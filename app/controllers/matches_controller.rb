@@ -1,10 +1,18 @@
 class MatchesController < ApplicationController
   def index
     # list of all matches from which, user can create single chat conversation
+    @potential_matches = []
+    @potential_matches << User.where.not(id: current_user.id)
+                              .where(gender: current_user.sex_pref)
+                              .where(sex_pref: current_user.gender)
+                              # .where((min_age >= current_user.age) && (max_age >= current_user.age))
+    # .where(current_user.age_pref.includes)
+    @next_user = @potential_matches[0].sample
 
     matches1 = Match.where(user_one_id: current_user.id).where(status: "validated")
     matches2 = Match.where(user_two_id: current_user.id).where(status: "validated")
     @matches = matches1 + matches2
+
   end
 
   # def index_requests

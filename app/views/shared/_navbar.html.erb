@@ -1,18 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-hivie justify-content-between d-flex">
 
   <div>
-      <i class="fas fa-chevron-left"></i>
-  </div>
-
-  <div>
-    <%= link_to "#", class: "navbar-brand align-items-center mr-0" do %>
-      <h2>HiVie</h2>
+    <% if current_user && @potential_matches.any? && current_page?(matches_path) %>
+      <%= link_to user_path(@next_user) do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
     <% end %>
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="navbar-brand align-items-center mr-0">
+      <h2 id="logo">HiVie</h2>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto text-right">
