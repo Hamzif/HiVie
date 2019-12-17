@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-    <h3 class="blue-profile-header" style="text-align: left; border-bottom: 1px solid gray">Matches</h3>
+    <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid gray">Matches</h3>
     <div class="matches-index container scrolling-wrapper-flexbox">
       <div class="row match-preview">
         <% @matches.each do |match| %>
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <h3 class="blue-profile-header" style="text-align: left; border-bottom: 1px solid gray; margin: 0px 0px">Conversations</h3>
+    <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid gray; margin: 0px 0px">Conversations</h3>
         <% @matches.each do |match| %>
           <div class="preview-message-card d-flex justify-content-start"  style="border-bottom: 1px solid gray">
             <% if match.user_one == current_user %>
