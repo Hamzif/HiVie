@@ -6,25 +6,34 @@
         <%= f.error_notification %>
 
         <div class="form-inputs d-flex flex-column justify-content-between" style="width: 100%; height: 100%;">
-          <div class="makeitbig" style="display: flex; flex-grow: 1;">
-            <%= f.input :diagnosis_year, label: 'Living HIV+ Since:', placeholder: '2008', input_html: { min: '1950', step: 'any', max: 'Date.today.year' } %>
-            <%= f.input :sex_pref, label: 'Match with:', required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
-            <div class="row">
-              <div class="col">
-                <%= f.input :min_age, collection: 18..80%>
+          <div class="makeitbig" style="display: flex; flex-grow: 1; min-height: 73vh;">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                 <%= f.input :diagnosis_year, label: 'Living HIV+ Since:', placeholder: '2008', input_html: { min: '1950', step: 'any', max: 'Date.today.year' } %>
+                </div>
               </div>
-              <div class="col">
-                <%= f.input :max_age, collection: 19..80%>
+              <div class="row">
+                <div class="col">
+                  <%= f.input :sex_pref, label: 'Match with:', required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
+                </div>
               </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <label class="select required" for="user_distance_pref">Distance<abbr title="required">*</abbr></label>
+              <div class="row">
+                <div class="col">
+                  <%= f.input :min_age, collection: 18..80%>
+                </div>
+                <div class="col">
+                  <%= f.input :max_age, collection: 19..80%>
+                </div>
               </div>
-              <div class="col">
-                <input type="range" name="user[distance_pref]" class="multi-range" id="distanceInputId" value="5" min="1" max="100" oninput="distanceOutputId.value = distanceInputId.value">
-                <output name="distanceOutputName" id="distanceOutputId"></output>
+              <div class="row">
+                <div class="col">
+                  <label class="select required" for="user_distance_pref">Distance<abbr title="required">*</abbr></label>
+                </div>
+                <div class="col">
+                  <input type="range" name="user[distance_pref]" class="multi-range" id="distanceInputId" value="5" min="1" max="100" oninput="distanceOutputId.value = distanceInputId.value">
+                  <output name="distanceOutputName" id="distanceOutputId"></output>
+                </div>
               </div>
             </div>
           </div>
