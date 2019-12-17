@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
    registrations: 'users/registrations'
   }
-  resources :users, only: [ :show ] do
+  resources :users, only: [ :show, :reveal] do
     resources :matches, only: [:create]
   end
 
-  resources :matches, only: [:show, :index, :destroy] do
+  resources :matches, only: [:show, :index, :destroy ] do
     resources :messages, only: [:index, :create]
   end
 

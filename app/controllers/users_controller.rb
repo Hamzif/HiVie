@@ -1,5 +1,13 @@
-  class UsersController < ApplicationController
+class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
+
+  def reveal
+    @user = User.find(params[:id])
+    unless current_user.has_access_to?(@user)
+      flash[:alert] = 'No'
+      redirect_to some_path
+    end
+  end
 
   def show
     @potential_matches = []

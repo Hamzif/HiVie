@@ -9,4 +9,8 @@ class Match < ApplicationRecord
   def matched_user(current_user)
     current_user == user_one ? user_two : user_one
   end
+
+  def revealed?
+    reveal_status == 'approved'
+  end
 end
