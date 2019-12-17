@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-      <h3 class="blue-profile-header">Create Account</h3>
+      <h3 class="profile-header">Create Account</h3>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
         <div class="photo-upload text-center">
-          <i class="fas fa-user-circle fa-5x" style="color: #132D7E"></i>
+          <i class="fas fa-user-circle fa-5x" style="color: $hivie-purple"></i>
           <%= f.input :photo, label: "Profile Picture" %>
           <%= f.input :photo_cache, as: :hidden %>
           <p style="opacity: 0.6">*Don’t worry, we’ll keep your photo anoymous for now</p>
