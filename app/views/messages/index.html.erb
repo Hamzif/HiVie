@@ -1,9 +1,11 @@
-<div class="mb-5">
-<% @messages.each do |message| %>
+<div style="margin-bottom: 8vh;">
+<% @messages_by_day.each do |date, messages| %>
     <div class="date-msg">
-     <p><%= Date.today %></p>
+     <p><%= date %></p>
     </div>
 
+
+<% messages.each do |message| %>
   <% if current_user == message.user %>
   <div class="d-flex justify-content-end">
     <h5 class="sent_msg"><%= message.content %></h5>
@@ -13,6 +15,10 @@
       <h5 class="receive_msg"> <%= message.content %></h5>
     </div>
   <% end %>
+<% end %>
+
+
+
 <% end %>
 </div>
 

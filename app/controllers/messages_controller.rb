@@ -1,9 +1,8 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.where(match: params[:match_id]).group(:id, :created_at)
+    @messages_by_day = Message.where(match: params[:match_id]).group_by{ |message| message.created_at.strftime('%Y-%m-%d') }
     @message = Message.new
     @match = Match.find(params[:match_id])
-    # raise
   end
 
   def create
