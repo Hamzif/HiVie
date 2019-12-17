@@ -1,37 +1,37 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-hivie">
-  <%#= link_to "#", class: "navbar-brand" do %>
-    <h2>Chat</h2>
-    <%# end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-hivie justify-content-between d-flex">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div>
+    <%= link_to matches_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+  </div>
 
-      <%# if user_signed_in? %>
-      <ul class="nav">
+  <div class="text-center">
+    <%= link_to user_path(@match.matched_user(current_user)), class: "navbar-brand align-items-center mr-0" do %>
+      <%= cl_image_tag @match.matched_user(current_user).photo, crop: :fill, class: "avatar-small" %>
+    <% end %>
+      <h5> <%= @match.matched_user(current_user).username %> </h5>
+  </div>
 
-      </ul>
+  <i class="fas fa-info-circle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></i>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto text-right">
+
+      <% if user_signed_in? %>
+
+          <li> <%= link_to "Block & report", user_characteristic_path(current_user), class: "nav-link" %> </li>
+          <li> <%= link_to "Unmatch", match_path(@match), method: :delete, class: "nav-link" %> </li>
+          <li> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> </li>
+
+      <% else %>
+
         <li class="nav-item">
-          <%#= link_to "Match", "#", class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%#= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%#= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item" %>
-            <%#= link_to "Update Preferences", "#", class: "dropdown-item" %>
-            <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <%# else %>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        </ul>
-      <%# end %>
+
+      <% end %>
+
+    </ul>
   </div>
 </div>
