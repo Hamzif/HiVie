@@ -1,2 +1,34 @@
+<div class="mb-5">
+<% @messages.each do |message| %>
+    <div class="date-msg">
+     <p><%= Date.today %></p>
+    </div>
 
+  <% if current_user == message.user %>
+  <div class="d-flex justify-content-end">
+    <h5 class="sent_msg"><%= message.content %></h5>
+  </div>
+  <% else %>
+    <div class="d-flex justify-content-start">
+      <h5 class="receive_msg"> <%= message.content %></h5>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
+
+
+
+<div class="input_msg text-center fixed-bottom" style="padding-top: 16px;">
+  <%= simple_form_for [@match, @message] do |f| %>
+      <div class="content-send-message w-90 mx-2">
+        <%= f.input :content, label: false, placeholder: 'Write message', :input_html => {:rows => 1, :style => 'height: 50px'}, class: "rounded-sm" %>
+      </div>
+      <div class="btn-send-message">
+        <%= f.button :button, class: "button" do %>
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+        <% end %>
+      </div>
+  <% end %>
+</div>
 

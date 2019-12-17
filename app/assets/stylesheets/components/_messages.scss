@@ -1,0 +1,47 @@
+.receive_msg {
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: $hivie-purple;
+  color: $hivie-purple;
+  padding: 10px 10px 10px 12px;
+  // width: 40%;
+  overflow: hidden;
+  display: flex;
+  justify-content: left;
+  border-radius: 16px;
+  max-width: 80%;
+}
+
+.sent_msg {
+  color: white;
+  background: $hivie-purple;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 10px 10px 10px 12px;
+  // width: 40%;
+  display: flex;
+  justify-content: left;
+  max-width: 80%;
+}
+textarea#message_content {
+  background: #F4F4F4;
+  border-radius: 8px;
+
+}
+
+
+.input_msg {
+  background-color: white;
+}
+
+.btn-send-message {
+  position: absolute;
+  bottom: 20px;
+  right:10px;
+  z-index: 1;
+}
+
+.date-msg {
+  display: flex;
+  justify-content: center;
+}
