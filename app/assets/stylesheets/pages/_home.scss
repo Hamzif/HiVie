@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+
+.background{
+  background: linear-gradient(180deg, #6455B3 0%, #D45F84 100%);
+  position: relative;
+}
+
+#home-logo{
+  color: $hivie-logo;
+}
+
+.fixed-button-home {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+transform: translateX(-50%)
+
+}

@@ -13,22 +13,26 @@
 
     <!-- to be done later for chat navbar -->
     <!-- COMMENTED OUT FOR NOW -->
-    <%# unless current_page?(new_user_session_path)%>
+
     <!-- add line to above statement >>> || current_page?(chat_path)  -->
-      <%#= render 'shared/navbar' %>
-      <%#= render 'shared/flashes' %>
-    <%# end %>
+
 
     <!-- Add the if for the match option to disappear on the dropdown
     if the user is on the swiping page -->
 
 
-    <%= render 'shared/navbar' %>
+    <%#= render 'shared/navbar' %>
 
-    <!-- main container -->
-    <div class="main-container-hivie">
-      <%= yield %>
-    </div>
+    <!-- main container for all pages except login page -->
+    <% unless current_page?(new_user_session_path)%>
+      <div class="main-container-hivie">
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
+      <% else %>
+        <%= yield %>
+    <% end %>
     <!-- end main container -->
 
     <%= javascript_include_tag 'application' %>
