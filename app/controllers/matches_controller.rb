@@ -72,4 +72,22 @@ class MatchesController < ApplicationController
     @match.destroy
     redirect_to matches_path
   end
+
+  def update_reveal
+    @match = Match.find(params[:id])
+    @match.update(match_params)
+    if @match.revealed?
+      flash[:notice] = 'Accepted!!'
+      redirect_to reveal_path(@match.matched_user(current_user))
+    else
+      flash[:notice] = 'Declined!!'
+      redirect_to match_messages_path(@match)
+    end
+  end
+
+  private
+
+  def match_params
+    params.require(:match).permit(:reveal_status)
+  end
 end

@@ -16,10 +16,10 @@ class UsersController < ApplicationController
                               .where(gender: current_user.sex_pref)
                               .where(sex_pref: current_user.gender)
                               .near(current_user.city, current_user.distance_pref)
-                                # .where("min_age < ?", current_user.age)
-                                # .where("max_age > ?", current_user.age)
-                                # .where((min_age >= current_user.age) && (max_age >= current_user.age))
-                                # .where(current_user.age_pref.includes)
+                              # .where("min_age < ?", current_user.age)
+                              # .where("max_age > ?", current_user.age)
+                              # .where((min_age >= current_user.age) && (max_age >= current_user.age))
+                              # .where(current_user.age_pref.includes)
     @next_user = @potential_matches[0].sample
     @user = User.find(params[:id])
   end

@@ -4,12 +4,17 @@ Rails.application.routes.draw do
    registrations: 'users/registrations'
   }
 
-  get '/reveal', to: 'users#reveal'
+  get '/reveal/:id', to: 'users#reveal', as: :reveal
   resources :users, only: [:show] do
     resources :matches, only: [:create]
   end
 
+  # patch 'matches/:id/update_reveal', to: 'matches#update_reveal'
+
   resources :matches, only: [:show, :index, :destroy ] do
+    member do
+      patch 'update_reveal'
+    end
     resources :messages, only: [:index, :create]
   end
 

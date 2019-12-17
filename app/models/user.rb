@@ -18,7 +18,7 @@ class User < ApplicationRecord
   # validates :photo, presence: true
 
   # if match exists, both users have access to the reveal show page of their profiles
-  def has_access_to?(user)
+  def has_access_to?(other_user)
     found_match = find_match_with(other_user)
     if found_match
       found_match.revealed?
