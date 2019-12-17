@@ -1,0 +1,19 @@
+function refreshForm(innerHTML) {
+  const newMessageForm = document.getElementById('new_message');
+  newMessageForm.innerHTML = innerHTML;
+}
+
+function addMessage(messageHTML) {
+  const messages = document.getElementById('messages');
+  messages.insertAdjacentHTML('beforeend', messageHTML);
+  messages.querySelector('.message:last-child').scrollIntoView()
+}
+
+// if there are errors, refresh the form with the message object
+<% if @message.errors.any? %>
+  refreshForm('<%= j render "messages/form", match: @match, message: @message %>')
+// else if there are no ERRORS
+<% else %>
+  addMessage('<%= j render "messages/message", message: @message %>')
+  refreshForm('<%= j render "messages/form", match: @match, message: Message.new %>')
+<% end %>

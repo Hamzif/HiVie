@@ -1,0 +1,11 @@
+<div class="message">
+  <% if current_user == message.user %>
+    <div class="d-flex justify-content-end">
+      <h5 class="sent_msg"><%= message.content %></h5>
+    </div>
+  <% else %>
+    <div class="d-flex justify-content-start">
+      <h5 class="receive_msg"> <%= message.content %></h5>
+    </div>
+  <% end %>
+</div>

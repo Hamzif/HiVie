@@ -12,8 +12,17 @@ class MessagesController < ApplicationController
     @match = Match.find(params[:match_id])
     @message.match = @match
     @message.user = current_user
-    @message.save
-    redirect_to match_messages_path(@match)
+    if @message.save
+      respond_to do |format|
+        format.html { redirect_to match_messages_path(@match) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'messages/index' }
+        format.js  # <-- idem
+      end
+    end
   end
 
   private

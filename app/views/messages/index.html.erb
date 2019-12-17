@@ -1,37 +1,19 @@
 
-<div style="margin-bottom: 10vh;">
-<% @messages_by_day.each do |date, messages| %>
+<div style="margin-bottom: 10vh;" id='messages'>
+  <% @messages_by_day.each do |date, messages| %>
     <div class="date-msg">
-     <p><%= date %></p>
+      <p><%= date %></p>
     </div>
-
-<% messages.each do |message| %>
-  <% if current_user == message.user %>
-  <div class="d-flex justify-content-end">
-    <h5 class="sent_msg"><%= message.content %></h5>
-  </div>
-  <% else %>
-    <div class="d-flex justify-content-start">
-      <h5 class="receive_msg"> <%= message.content %></h5>
-    </div>
+    <% messages.each do |message| %>
+      <%= render 'message', message: message %>
+      <% end %>
   <% end %>
-<% end %>
-<% end %>
 </div>
 
 
 
 
 <div class="input_msg text-center fixed-bottom" style="padding-top: 16px;">
-  <%= simple_form_for [@match, @message] do |f| %>
-      <div class="content-send-message w-90 mx-2">
-        <%= f.input :content, label: false, placeholder: 'Write message', :input_html => {:rows => 1, :style => 'height: 50px'}, class: "rounded-sm" %>
-      </div>
-      <div class="btn-send-message">
-        <%= f.button :button, class: "button" do %>
-          <i class="fas fa-paper-plane" aria-hidden="true"></i>
-        <% end %>
-      </div>
-  <% end %>
+  <%= render 'form', message: @message, match: @match %>
 </div>
 
