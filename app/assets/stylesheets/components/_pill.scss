@@ -20,7 +20,6 @@
   // width: auto !important;
 
 
-
 #pill-ghost {
   color: #132D7E;
 }
@@ -33,7 +32,11 @@
 .fa-user,.fa-thumbs-up,.fa-music,.fa-futbol {
   color: $hivie-purple !important;
 }
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0rem #f9f8fa;
 
+}
 
 a.btn.btn-pill:hover {
   color: $hivie-pink !important;
@@ -46,4 +49,15 @@ a.btn.btn-pill:hover {
   color: white !important;
   text-decoration: none;
   }
+}
+
+.accordion > .card > .card-header {
+  background-color: #fff;
+  border-bottom-color: $hivie-purple !important;
+  border-bottom-width: 1.5px !important;
+}
+
+.card {
+  border:  0.5px solid rgba(0, 0, 0, -0.9);
+  // border-bottom-width: 1.5px ;
 }
