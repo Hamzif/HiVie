@@ -51,26 +51,4 @@
         <% end %>
     </div>
   </div>
-  <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid RGB(70,44,114, 0.8);">PENDING</h3>
-  <div class="matches-index container scrolling-wrapper-flexbox">
-      <div class="row match-preview">
-        <% @matches_waiting.each do |match| %>
-          <div class="col">
-            <div class= "match-avatar">
-              <%= link_to match_messages_path(match) do %>
-                <div class="match-username" style="text-align: center; margin-top: 1px">
-                <% if match.user_one == current_user %>
-                  <%= cl_image_tag match.user_two.photo, class: "avatar-bordered inline-block" %>
-                  <p> <%= match.user_two.username %></p>
-                <% else %>
-                  <%= cl_image_tag match.user_one.photo, class: "avatar-bordered inline-block" %>
-                  <p> <%= match.user_one.username %></p>
-                <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
 </div>

@@ -368,15 +368,15 @@ puts "created user_26"
 
 # MATCHES BELOW
 
-match_1 = Match.create(user_one_id: user_1.id, user_two_id: user_3.id)
-match_2 = Match.create(user_one_id: user_1.id, user_two_id: user_4.id)
-match_3 = Match.create(user_one_id: user_1.id, user_two_id: user_9.id)
-match_4 = Match.create(user_one_id: user_1.id, user_two_id: user_10.id)
-match_5 = Match.create(user_one_id: user_1.id, user_two_id: user_14.id)
+match_1 = Match.create(user_two_id: user_1.id, user_one_id: user_3.id, status: 'initiated')
+match_2 = Match.create(user_two_id: user_1.id, user_one_id: user_4.id, status: 'initiated')
+match_3 = Match.create(user_two_id: user_1.id, user_one_id: user_9.id, status: 'initiated')
+match_4 = Match.create(user_two_id: user_1.id, user_one_id: user_10.id, status: 'initiated')
+match_5 = Match.create(user_two_id: user_1.id, user_one_id: user_14.id, status: 'initiated')
 
 
-match_6 = Match.create(user_one_id: user_1.id, user_two_id: user_15.id, status: "validated")
-match_7 = Match.create(user_one_id: user_16.id, user_two_id: user_1.id, status: "validated")
+match_6 = Match.create(user_one_id: user_1.id, user_two_id: user_15.id, status: "initiated")
+match_7 = Match.create(user_one_id: user_16.id, user_two_id: user_1.id, status: "initiated")
 
 
 
