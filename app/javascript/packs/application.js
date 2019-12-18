@@ -1,2 +1,2 @@
 import "bootstrap";
-import "previewImageOnFileSelect"
+import  { previewImageOnFileSelect } from "../components/photo_preview.js"
