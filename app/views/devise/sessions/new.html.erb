@@ -44,10 +44,10 @@
   <!-- MODAL POP-UP END -->
 
 
-    <div class="row h-100">
+    <div class="row h-75">
       <div class="col-xs-12 col-sm-4 offset-sm-4 align-self-center" style="text-align:center;">
         <h1 id="home-logo">HiVie</h1>
-        <h3>Life Live. In Love</h3>
+        <h3>Live Life. In Love</h3>
         <div class="shared-links" style=" opacity:.6">
           <%#= render "devise/shared/links" %>
           <!-- Need to delete the 'log in' blue link that comes with devise -->
@@ -57,11 +57,11 @@
 
     <div class="fixed-button-home text-center w-100">
       <div class="col">
-         <h5 style="opacity: 0.6">A safe space for HIV+ persons to <br/>connect, share stories & find love</h5>
+         <h5>A safe space for HIV+ persons to <br/>connect, share stories & find love</h5>
         <!-- Insert form here -->
 
-          <div class="form-actions w-90" style="padding-top: 8px">
-            <%= link_to "Register", new_user_registration_path, class: 'btn button btn-pink', id: "btn-home" %>
+          <div class="form-actions w-90" style="padding-top: 15px; margin-bottom: 20px;">
+            <%= link_to "Register", new_user_registration_path, class: 'btn button btn-pink', id: "btn-home"%>
           </div>
         <% end %>
       </div>
@@ -69,3 +69,4 @@
 
   </div>
 </div>
+
