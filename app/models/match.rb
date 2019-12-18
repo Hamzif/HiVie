@@ -11,6 +11,8 @@ class Match < ApplicationRecord
   end
 
   def has_validated?(user)
+    return true if status == 'validated'
+
     if user == user_one
       status == 'initiated'
     else

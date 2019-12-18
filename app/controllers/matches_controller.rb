@@ -16,8 +16,8 @@ class MatchesController < ApplicationController
     @match = current_user.find_match_with(User.find(params[:matching_user_id]))
 
     if @match
-      @match.status = "validated"
-      @match.save
+      @match.update(status: "validated")
+      @match.save!
       redirect_to match_path(@match, { matching_user_id: params[:matching_user_id] })
     else
       @match = Match.create(user_one_id: current_user.id, user_two_id: params[:matching_user_id], status: 'initiated')
@@ -33,9 +33,7 @@ class MatchesController < ApplicationController
   def show
     # @user1 = User.find(current_user.id)
     # @user2 = User.find(params[:matching_user_id])
-    @match = Match.where(user_one_id: current_user.id, user_two_id: params[:matching_user_id]).first
-    @user1 = @match.user_one
-    @user2 = @match.user_two
+    @match = Match.find(params[:id])
     @potential_matches = current_user.potential_matches
     @next_user = @potential_matches.sample
   end
