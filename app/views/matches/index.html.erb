@@ -22,8 +22,12 @@
         <% end %>
       </div>
     </div>
+
+    <!-- CONVERSATION START -->
+
     <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid RGB(70,44,114, 0.8); margin: 0px 0px">Conversations</h3>
         <% @conversations.each do |match| %>
+         <%= link_to match_messages_path(match) do %>
           <div class="preview-message-card d-flex justify-content-start"  style="border-bottom: 1px solid RGB(70,44,114, 0.4)">
             <% if match.user_one == current_user %>
               <div>
@@ -48,6 +52,7 @@
               </div>
             <% end %>
             </div>
+          <% end %>
         <% end %>
     </div>
   </div>

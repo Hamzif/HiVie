@@ -7,13 +7,13 @@
   </div>
 
   <div class="text-center">
-    <%# if @match.revealed? %>
-      <!-- Show me your face -->
-    <%# else %>
-      <!-- Dont -->
-    <%# end %>
-    <%= link_to user_path(@match.matched_user(current_user)), class: "navbar-brand align-items-center mr-0" do %>
+    <% if @match.revealed? %>
       <%= cl_image_tag @match.matched_user(current_user).photo, crop: :fill, class: "avatar-small" %>
+    <% else %>
+      <div class="avatar-small" style="background-size: cover; background-image: url('<%= cloudinary_url(@match.matched_user(current_user).photo, crop: :fill, :transformation => {:effect => "blur:800", gravity: :face}) %>')"></div>
+    <% end %>
+
+    <%= link_to user_path(@match.matched_user(current_user)), class: "navbar-brand align-items-center mr-0" do %>
     <% end %>
       <h5> <%= @match.matched_user(current_user).username %> </h5>
   </div>
