@@ -8,7 +8,11 @@ class ProfilesController < ApplicationController
     @user.update(user_params)
     @user.save
 
-    redirect_to user_path(@next_user)
+    if @next_user
+      redirect_to user_path(@next_user)
+    else
+      redirect_to user_path(current_user.next_potential_user)
+    end
   end
 
   private
