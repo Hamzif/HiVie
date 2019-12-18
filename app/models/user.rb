@@ -38,6 +38,7 @@ class User < ApplicationRecord
   def potential_matches
     User.where(gender: sex_pref)
         .where(sex_pref: gender)
+        .where.not(id: id)
         .near([latitude, longitude], distance_pref)
         .select { |user| user.age >= min_age && user.age <= max_age }
         .reject { |user| find_match_with(user)&.has_validated?(self) }
