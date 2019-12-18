@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-    <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid RGB(70,44,114, 0.5);">Matches</h3>
+    <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid RGB(70,44,114, 0.8);">Matches</h3>
     <div class="matches-index container scrolling-wrapper-flexbox">
       <div class="row match-preview">
         <% @matches.each do |match| %>
@@ -23,18 +23,18 @@
       </div>
     </div>
 
-    <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid RGB(70,44,114, 0.5); margin: 0px 0px">Conversations</h3>
+    <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid RGB(70,44,114, 0.8); margin: 0px 0px">Conversations</h3>
         <% @matches.each do |match| %>
-          <div class="preview-message-card d-flex justify-content-start"  style="border-bottom: 1px solid RGB(70,44,114, 0.5)">
+          <div class="preview-message-card d-flex justify-content-start"  style="border-bottom: 1px solid RGB(70,44,114, 0.4)">
             <% if match.user_one == current_user %>
               <div>
                 <%= cl_image_tag match.user_two.photo, class: "avatar-match-list mb-2 mt-2" %>
               </div>
               <div class= "match-card-info align-self-center ml-4">
-                <div class="match-card-header"><h5><%= match.user_two.username %></h5></div>
-                <p class="message-text" style="clear:both">
+                <div class="match-card-header"><%= match.user_two.username%></div>
+                  <h5 class="message-text" style="clear:both">
                   <% if match.messages.any? %>
-                    <%= match.messages.last.content.truncate(50) %></p>
+                    <%= match.messages.last.content.truncate(50) %></h5>
                   <% end %>
               </div>
             <% else %>
@@ -42,9 +42,9 @@
                 <%= cl_image_tag match.user_one.photo, class: "avatar-match-list mb-2 mt-2" %>
               </div>
               <div class= "match-card-info align-self-center ml-4">
-                <div class="match-card-header"><h5><%= match.user_one.username %></h5></div>
+                <div class="match-card-header"><%= match.user_one.username %></div>
                 <% if match.messages.any? %>
-                <p class="message-text" style="clear:both"><%= match.messages.last.content.truncate(50) %></p>
+                  <h5 class="message-text" style="clear:both"><%= match.messages.last.content.truncate(50) %></h5>
                 <% end %>
               </div>
             <% end %>

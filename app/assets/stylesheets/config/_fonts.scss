@@ -84,9 +84,16 @@ h4 {
   font-family: Source Sans Pro;
 }
 
-// Matches Alias, Message Preview,
+// Match List: Message Preview
 h5 {
   font-size: 16px !important;
+}
+
+// Match List: Matches Alias
+.match-card-header {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Montserrat;
 }
 
 // Smallest Text, Message Navbar Alias Name, Message Date, *Astricts
