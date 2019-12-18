@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
+  attr_accessor :avatar
 
   def age
     ((Date.today - birthday) / 365).to_i

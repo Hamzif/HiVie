@@ -13,6 +13,10 @@ class MessagesController < ApplicationController
     @message.match = @match
     @message.user = current_user
     if @message.save
+        # message: @message.to_json
+      # ActionCable.server.broadcast("match_#{@match.id}", {
+      #   message_partial: render(partial: "messages/message", locals: {message: @message, user_is_messages_author: false })
+      # })
       respond_to do |format|
         format.html { redirect_to match_messages_path(@match) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`

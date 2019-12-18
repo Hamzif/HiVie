@@ -3,7 +3,7 @@
     <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid RGB(70,44,114, 0.8);">Matches</h3>
     <div class="matches-index container scrolling-wrapper-flexbox">
       <div class="row match-preview">
-        <% @matches.each do |match| %>
+        <% @matches_waiting.each do |match| %>
           <div class="col">
             <div class= "match-avatar">
               <%= link_to match_messages_path(match) do %>
