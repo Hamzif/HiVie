@@ -6,6 +6,8 @@ class MatchesController < ApplicationController
     matches2 = Match.where(user_two_id: current_user.id).where(status: "validated")
     @matches_waiting = current_user.matches.where(status: 'initiated')
     @matches = matches1 + matches2
+    @conversations = @matches.select { |match| match.messages.count > 0 }
+    @matches = @matches - @conversations
   end
 
   def new
