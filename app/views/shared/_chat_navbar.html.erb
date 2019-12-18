@@ -7,11 +7,11 @@
   </div>
 
   <div class="text-center">
-    <% if @match.reveal_status == 'revealed' %>
+    <%# if @match.reveal_status == 'revealed' %>
       <!-- Show me your face -->
-    <% else %>
+    <%# else %>
       <!-- Dont -->
-    <% end %>
+    <%# end %>
     <%= link_to user_path(@match.matched_user(current_user)), class: "navbar-brand align-items-center mr-0" do %>
       <%= cl_image_tag @match.matched_user(current_user).photo, crop: :fill, class: "avatar-small" %>
     <% end %>
