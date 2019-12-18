@@ -6,14 +6,18 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :user_characteristics, dependent: :destroy
   has_many :characteristics, through: :user_characteristics
-  has_many :matches, class_name: 'Match', foreign_key: 'user_one', dependent: :destroy
-  has_many :matches, class_name: 'Match', foreign_key: 'user_two', dependent: :destroy
+
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
 
   def age
-    ((Date.today - self.birthday) / 365).to_i
+    ((Date.today - birthday) / 365).to_i
   end
+
+  def matches
+    Match.where('user_one_id = :id OR user_two_id = :id', id: id)
+  end
+
   mount_uploader :photo, PhotoUploader
   # validates :photo, presence: true
 
@@ -27,11 +31,23 @@ class User < ApplicationRecord
     end
   end
 
-private
+  def next_potential_user(user_limit = {})
+    potential_matches.reject { |potential_user| potential_user == user_limit[:reject] }.first
+  end
+
+  def potential_matches
+    User.where(gender: sex_pref)
+        .where(sex_pref: gender)
+        .near([latitude, longitude], distance_pref)
+        .select { |user| user.age >= min_age && user.age <= max_age }
+        .reject { |user| find_match_with(user)&.has_validated?(self) }
+  end
+
+  # user_one_id
 
   # confirm that a match exists
   def find_match_with(other_user)
-    Match.find_by(user_one_id: [id, other_user.id], user_two_id: [id, other_user.id])
+    matches.find_by(user_one_id: [id, other_user.id], user_two_id: [id, other_user.id])
     # @match1 = Match.where(user_one_id: current_user.id)
     #                .where()
     #                .first
@@ -42,6 +58,4 @@ private
 end
 
 # current_user.matches
-
-
 # SELECT * FROM users WHERE id IN [1,2]
