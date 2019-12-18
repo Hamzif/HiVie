@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :matches, class_name: 'Match', foreign_key: 'user_two', dependent: :destroy
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
+  attr_accessor :avatar
 
   def age
     ((Date.today - self.birthday) / 365).to_i
