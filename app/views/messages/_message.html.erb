@@ -1,5 +1,5 @@
 <div class="message">
-  <% if current_user == message.user %>
+  <% if user_is_messages_author %>
     <div class="d-flex justify-content-end">
       <h5 class="sent_msg"><%= message.content %></h5>
     </div>

@@ -14,6 +14,6 @@ function addMessage(messageHTML) {
   refreshForm('<%= j render "messages/form", match: @match, message: @message %>')
 // else if there are no ERRORS
 <% else %>
-  addMessage('<%= j render "messages/message", message: @message %>')
+  addMessage('<%= j render "messages/message", message: @message, user_is_messages_author: true %>')
   refreshForm('<%= j render "messages/form", match: @match, message: Message.new %>')
 <% end %>
