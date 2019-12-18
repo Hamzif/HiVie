@@ -1,19 +1,19 @@
 <div class="background">
   <div class="main-container-match"></div>
-  <h2 class="text-center mb-5 mt-5">It's A Match!</h2>
+  <div class="match-show-header text-center mb-5 mt-5" style="font-size: 36px;">It's A Match!</div>
 
   <div class="d-flex justify-content-center">
-     <div class="avatar-form" style="background-size: cover; background-image: url('<%= cloudinary_url(@match.user_one.photo, crop: :fill, :transformation => {:effect => "blur:800", gravity: :face}) %>')"></div>
-      <div class="avatar-form" style="background-size: cover; background-image: url('<%= cloudinary_url(@match.user_two.photo, crop: :fill, :transformation => {:effect => "blur:800", gravity: :face}) %>')"></div>
+    <div class="avatar-form" style="background-size: cover; background-image: url('<%= cloudinary_url(@match.user_one.photo, crop: :fill, :transformation => {:effect => "blur:800", gravity: :face}) %>')"></div>
+    <div class="avatar-form" style="background-size: cover; background-image: url('<%= cloudinary_url(@match.user_two.photo, crop: :fill, :transformation => {:effect => "blur:800", gravity: :face}) %>')"></div>
       <%#= cl_image_tag @match.user_one.photo, crop: :fill, class: "avatar-x-large mr-5" %>
       <%#= cl_image_tag @match.user_two.photo, crop: :fill, class: "avatar-x-large" %>
   </div>
 
   <h3 class="text-center mb-5 mt-5">Meet your match. Start a chat!</h3>
     <%= link_to 'Let\'s chat', match_messages_path(@match), class: "btn button btn-pink" %>
-  <div class="text-center">
+  <div class="text-center mt-5">
     <% if @next_user %>
-      <%= link_to 'X', user_path(@next_user), class: "mt-5 btn btn-rounded" %>
+      <%= link_to 'X', user_path(@next_user), class: "btn btn-rounded" %>
     <% end %>
   </div>
 </div>
