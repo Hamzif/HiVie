@@ -10,6 +10,14 @@ class Match < ApplicationRecord
     current_user == user_one ? user_two : user_one
   end
 
+  def has_validated?(user)
+    if user == user_one
+      status == 'initiated'
+    else
+      false
+    end
+  end
+
   def revealed?
     reveal_status == 'approved'
   end

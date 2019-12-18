@@ -3,7 +3,10 @@
 .background{
   background: linear-gradient(180deg, #6455B3 0%, #D45F84 100%);
   position: relative;
-  overflow:hidden;
+
+
+  overflow: hidden;
+
 }
 
 #home-logo{
@@ -15,6 +18,5 @@
   bottom: 10px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-transform: translateX(-50%)
-
+  transform: translateX(-50%)
 }

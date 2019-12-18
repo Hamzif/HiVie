@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-hivie justify-content-between d-flex sticky-top">
 
   <div>
-    <% if current_user && @potential_matches.any? && current_page?(matches_path) %>
+    <% if current_user && @next_user %>
       <%= link_to user_path(@next_user) do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
@@ -9,7 +9,9 @@
   </div>
 
   <div class="navbar-brand align-items-center mr-0">
+    <%= link_to root_path do %>
       <h2 id="logo">HiVie</h2>
+    <% end %>
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -23,7 +25,11 @@
       <% if user_signed_in? %>
 
           <li class="nav-item">
-            <%= link_to "Match", user_path(User.all.sample), class: "nav-link" %>
+            <% if @next_user %>
+              <%= link_to "Match", user_path(@next_user), class: "nav-link" %>
+            <% else %>
+              You're matched out
+            <% end %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", matches_path, class: "nav-link" %>
