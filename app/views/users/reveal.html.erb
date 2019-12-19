@@ -1,7 +1,7 @@
 <div class="card-matching">
   <!-- add the lack gradient at the bottom, look what claire sent. And add the blure -->
 <!-- ("sample.jpg", blur: 600) -->
-  <div class="bgimg" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
+  <div class="bg-img">
     <%= cl_image_tag @user.photo, height: 400, width: 344, crop: :fill, class: "card-img-top"%>
   </div>
 
@@ -28,15 +28,15 @@
   <% end %>
   </div>
 </div>
-  <div class="row mx-1" style="justify-content: space-evenly;">
+
     <% unless @user.characteristics.nil? %>
       <% @user.characteristics.each do |char| %>
-        <div class="btn btn-pill active col-3 m-1">
+        <div class="btn btn-pill active">
           <%= char.name %>
         </div>
       <% end %>
     <% end %>
-  </div>
+
 
   <div>
     <h3 class="text-center mb-5 mt-5"><%= link_to 'All Matches', matches_path, class: "btn button btn-pink" %></h3>
