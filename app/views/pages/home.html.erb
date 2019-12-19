@@ -2,7 +2,7 @@
   <h3 class="profile-header">Your Profile</h3>
   <div>
       <div class="bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
-        <%= cl_image_tag @current_user.photo, height: 450, width: 344, crop: :fill, class: "card-img-top"%>
+        <%= cl_image_tag @current_user.photo, height: 400, width: 344, crop: :fill, class: "card-img-top"%>
       </div>
   </div>
 
@@ -14,6 +14,9 @@
       <div class="geo-location-font ml-3 mb-1">
         <%= @current_user.city %>
       </div>
+      <div class="geo-location-font ml-3 mb-1">
+        <h4>Living HIV+ Since: <%= @user.diagnosis_year %></h4>
+      </div>
     </div>
   </div>
 </div>
@@ -24,7 +27,7 @@
     <% if @current_user.bio %>
       <%= @current_user.bio %>
     <% else %>
-      " "
+      No Bio
     <% end %>
     </div>
   </div>
