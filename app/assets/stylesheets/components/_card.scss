@@ -3,10 +3,14 @@
   justify-content: space-between;
   align-items: flex-end;
   position: absolute;
-  bottom: 1vh;
+  bottom: 0;
   width: 100%;
   color: white;
   align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,-0.8),rgba(0,0,0,0.75));
+}
+.ml-2, .mx-2 {
+  margin-left: 0rem !important;
 }
 
 .card-matching {
@@ -35,7 +39,7 @@
   background-size: cover;
   background-position: center;
   height: 400px;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+
 }
 
 
