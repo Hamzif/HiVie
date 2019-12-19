@@ -36,9 +36,9 @@
       <!-- this is the heart and cross -->
     <div class="d-flex justify-content-center mx-5 mt-3">
       <% unless @next_user %>
-        <div>
+        <div id="matched-out">
           <%= link_to root_path do %>
-            This is your last potential match : (
+            <h5>All Matched Out!</h5>
           <% end %>
         </div>
       <% else %>
