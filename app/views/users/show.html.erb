@@ -18,7 +18,7 @@
   <div class="bio-font mt-3 mb-3">
     <div class="10">
       <% if @user.bio %>
-        <%= @user.bio.truncate(50) %>
+        <%= @user.bio.truncate(100) %>
       <% else %>
         No user bio
       <% end %>
