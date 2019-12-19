@@ -27,6 +27,10 @@
   border-radius: 50%;
   color: $hivie-purple !important;
   border-color: $hivie-purple;
+  &.btn-x {
+    color: white !important;
+    background: $hivie-purple;
+  }
 }
 
 .btn {
