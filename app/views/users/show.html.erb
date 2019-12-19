@@ -1,6 +1,6 @@
  <div class="card-matching">
   <div class="bg-img" style="background-image: url(<%= cloudinary_url(@user.photo, :transformation => {:effect => "blur:800"}) %>)">
-    <!-- https://res.cloudinary.com/demo/image/upload/w_200/e_gradient_fade,y_-0.5,b_black/sample.jpg -->
+     <!-- https://res.cloudinary.com/demo/image/upload/w_200/e_gradient_fade,y_-0.5,b_black/sample.jpg -->
   </div>
   <div class="card-infos-users ml-2">
     <div>
@@ -11,30 +11,32 @@
         <%= @user.city %>
       </div>
     </div>
-    <!-- <h5 class="card-infos-users-age"> <%= @user.age  %></h5> -->
   </div>
 </div>
-<!-- need to add the truncate to shorten the bio -->
+<!-- This is the bio -->
   <div class="bio-font mt-3 mb-3">
     <div class="10">
       <% if @user.bio %>
-        <%= @user.bio.truncate(50) %>
+        <%= @user.bio.truncate(100) %>
       <% else %>
         No user bio
       <% end %>
     </div>
   </div>
-    <div class="row mx-1" style="justify-content: space-evenly;">
+
+  <!-- this is the pilla -->
+
       <% unless @user.characteristics.nil? %>
         <% @user.characteristics.each do |char| %>
-          <div class="btn btn-pill active col-3 m-1">
+          <div class="btn btn-pill active">
             <%= char.name %>
           </div>
         <% end %>
       <% end %>
-    </div>
+
+
       <!-- this is the heart and cross -->
-    <div class="d-flex justify-content-center mx-5 mt-3">
+    <div class="d-flex justify-content-center mx-5">
       <% unless @next_user %>
         <div id="matched-out">
           <%= link_to root_path do %>
