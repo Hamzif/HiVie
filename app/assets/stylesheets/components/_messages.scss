@@ -47,3 +47,9 @@ textarea#message_content {
   justify-content: center;
 }
 
+.preview-message-card {
+  a {
+    text-decoration: none !important;
+  }
+}
+
