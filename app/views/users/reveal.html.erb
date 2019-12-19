@@ -9,10 +9,13 @@
   <div class="card-infos-users ml-2">
     <div>
       <div class="alias-font ml-3 mt-1">
-        <%= @user.username %>, <%= @user.age %>
+        <%= @user.first_name %>, <%= @user.age %>
       </div>
       <div class="geo-location-font ml-3 mb-1">
         <%= @user.city %>
+      </div>
+      <div class="geo-location-font ml-3 mb-1">
+        <h4>Living HIV+ Since: <%= @user.diagnosis_year %></h4>
       </div>
     </div>
   </div>

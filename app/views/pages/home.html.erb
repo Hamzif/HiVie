@@ -13,6 +13,9 @@
       <div class="geo-location-font ml-3 mb-1">
         <%= @current_user.city %>
       </div>
+      <div class="geo-location-font ml-3 mb-1">
+        <h4>Living HIV+ Since: <%= @user.diagnosis_year %></h4>
+      </div>
     </div>
   </div>
 </div>
@@ -23,7 +26,7 @@
     <% if @current_user.bio %>
       <%= @current_user.bio %>
     <% else %>
-      " "
+      No Bio
     <% end %>
     </div>
   </div>
