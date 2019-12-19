@@ -7,15 +7,14 @@
   </div>
 
   <div class="text-center">
-    <% if @match.revealed? %>
-      <%= cl_image_tag @match.matched_user(current_user).photo, crop: :fill, class: "avatar-small" %>
-    <% else %>
-      <%= cl_image_tag @match.matched_user(current_user).photo, transformation: {:effect => "blur:800"}, class: 'avatar-small'%>
-    <% end %>
-
-    <%= link_to user_path(@match.matched_user(current_user)), class: "navbar-brand align-items-center mr-0" do %>
-    <% end %>
-      <h5> <%= @match.matched_user(current_user).username %> </h5>
+      <% if @match.revealed? %>
+        <%= link_to reveal_path(@match.matched_user(current_user)), class: "navbar-brand align-items-center mr-0" do%>
+          <%= cl_image_tag @match.matched_user(current_user).photo, crop: :fill, class: "avatar-small" %>
+        <% end %>
+      <% else %>
+        <%= cl_image_tag @match.matched_user(current_user).photo, transformation: {:effect => "blur:800"}, class: 'avatar-small'%>
+      <% end %>
+        <h5> <%= @match.matched_user(current_user).username %> </h5>
   </div>
 
   <i class="fas fa-info-circle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></i>
@@ -33,9 +32,7 @@
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
-
       <% end %>
-
     </ul>
   </div>
 </div>
