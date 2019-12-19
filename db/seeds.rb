@@ -198,12 +198,14 @@ user_26 = User.create(email: 'claire@gmail.com', password: "password", min_age: 
 puts "created user_26"
 
 
-# Characteristic.all.sample
-User.all.sample do
+User.all.each do |user|
   10.times do
     UserCharacteristic.create(user: user, characteristic: Characteristic.all.sample)
   end
 end
+
+# Characteristic.all.sample
+
 
 # MATCHES BELOW
 match_1 = Match.create(user_two_id: user_1.id, user_one_id: user_3.id, status: 'initiated')
