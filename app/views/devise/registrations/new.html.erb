@@ -9,10 +9,17 @@
 
       <div class="form-inputs">
         <div class="photo-upload text-center">
+          <% if resource.photo.nil? %>
           <i class="fas fa-user-circle fa-5x" style="color: $hivie-purple"></i>
+         <% else %>
+          <%# cl_image_tag resource.photo , class: 'avatar-form' %>
+          <%= cl_image_tag  "", class: "d-none avatar-form" , id: "photo-preview"%>
+         <% end %>
+          <!-- <i class="fas fa-user-circle fa-5x" style="color: $hivie-purple"></i> -->
           <%#= f.input :photo, label: "Profile Picture"%>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= cl_image_tag "", class: "d-none" , id: "photo-preview"%>
+          <%= f.input :photo, input_html: { class: "d-none", id: "photo-input" }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
           <p style="opacity: 0.6">*Don’t worry, we’ll keep your photo anoymous for now</p>
         </div>
 
