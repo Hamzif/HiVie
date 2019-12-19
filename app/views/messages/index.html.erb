@@ -62,8 +62,8 @@
         <p>Your match has requested to share their identity. Would you like to share yours?</p>
       </div>
       <div class="modal-footer">
-        <div class="row">
-          <div class="col">
+        <div class="row-centered">
+          <div class="col-centered">
             <%= link_to "Accept", update_reveal_match_path(@match, match: {reveal_status: 'approved'}), method: :patch %>
             <%= link_to "Decline", update_reveal_match_path(@match, match: {reveal_status: 'declined'}), method: :patch %>
           </div>
