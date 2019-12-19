@@ -46,21 +46,21 @@
 <!-- MODAL POP-UP -->
 <div class="modal fade" id="ModalRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered class="rounded mb-0" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="border-radius: 14px;">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Reveal Request </h5>
+        <h5 class="modal-title" style="font-weight: bold;"id="exampleModalLongTitle">Reveal Request </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="color: #462B71;">
-        <p>Your match has requested to share their identity. Would you like to share yours?</p>
+      <div class="modal-body" id="modal-radius" style="color: #462B71;">
+        <p style="font-size: 15px !important">Your match has requested to <strong>share their identity</strong>. Would you like to share yours?</p>
       </div>
       <div class="modal-footer">
         <div class="row-centered">
           <div class="col-centered">
-            <%= link_to "Accept", update_reveal_match_path(@match, match: {reveal_status: 'approved'}), method: :patch %>
-            <%= link_to "Decline", update_reveal_match_path(@match, match: {reveal_status: 'declined'}), method: :patch %>
+            <%= link_to "Accept", update_reveal_match_path(@match, match: {reveal_status: 'approved'}), method: :patch, style:'font-weight: bold;'  %>
+            <%= link_to "Decline", update_reveal_match_path(@match, match: {reveal_status: 'declined'}), method: :patch, style:'font-weight: bold;'  %>
           </div>
           <div class="col">
             <%#= link_to "Decline", id: 'decline' %>
