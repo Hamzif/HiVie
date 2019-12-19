@@ -1,8 +1,7 @@
 <div class="card-matching">
   <h3 class="profile-header">Your Profile</h3>
   <div>
-      <div class="bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
-        <%= cl_image_tag @current_user.photo, height: 400, width: 344, crop: :fill, class: "card-img-top"%>
+      <div class="bg-img" style="background-image: url(<%= cloudinary_url(current_user.photo) %>)">
       </div>
   </div>
 
@@ -32,7 +31,7 @@
 
     <% unless @current_user.characteristics.nil? %>
       <% @current_user.characteristics.each do |char| %>
-        <div class="btn btn-pill active ">
+        <div class="btn btn-pill active" id="pills-profiles">
           <%= char.name %>
         </div>
       <% end %>

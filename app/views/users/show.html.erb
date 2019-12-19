@@ -28,11 +28,12 @@
 
       <% unless @user.characteristics.nil? %>
         <% @user.characteristics.each do |char| %>
-          <div class="btn btn-pill active">
+          <div class="btn btn-pill active" id="pills-profiles">
             <%= char.name %>
           </div>
         <% end %>
       <% end %>
+      <br><br>
 
 
       <!-- this is the heart and cross -->
