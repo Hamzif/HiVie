@@ -22,9 +22,9 @@
 <div class="bio-font mt-3 mb-3">
   <div class="10">
   <% if @user.bio %>
-    <%= @user.bio.truncate(50) %>
+    <%= @user.bio %>
   <% else %>
-    No user bio
+    " "
   <% end %>
   </div>
 </div>
@@ -37,29 +37,7 @@
       <% end %>
     <% end %>
   </div>
-    <!-- this is the heart and cross -->
-  <div class="d-flex justify-content-center mx-5 mt-3">
-    <% unless @next_user %>
-      <div>
-        <%= link_to root_path do %>
-          <i class="fas fa-times mx-5"></i>
-        <% end %>
-      </div>
-      <div>
-        <%= link_to root_path do %>
-          <i class="fas fa-heart mx-5"></i>
-        <% end %>
-      </div>
-    <% else %>
-      <div>
-        <%= link_to user_path(@next_user) do %>
-          <i class="fas fa-times mx-5"></i>
-        <% end %>
-      </div>
-      <div>
-        <%= link_to user_matches_path(current_user, {matching_user_id: @user.id}), method: :post do %>
-          <i class="fas fa-heart mx-5"></i>
-        <% end %>
-        </div>
-      <% end %>
-    </div>
+
+  <div>
+    <h3 class="text-center mb-5 mt-5"><%= link_to 'All Matches', matches_path, class: "btn button btn-pink" %></h3>
+  </div>
