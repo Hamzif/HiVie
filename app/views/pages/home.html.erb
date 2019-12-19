@@ -1,7 +1,7 @@
 <div class="card-matching">
   <h3 class="profile-header">Your Profile</h3>
   <div>
-      <div class="bg-img" style="background-image: url(<%= cloudinary_url(current_user.photo) %>)">
+  <div class="bg-img" style="background-image: url(<%= cloudinary_url(@current_user.photo) %>)">
       </div>
   </div>
 
@@ -14,7 +14,7 @@
         <%= @current_user.city %>
       </div>
       <div class="geo-location-font ml-3 mb-1">
-        <h4>Living HIV+ Since: <%= @user.diagnosis_year %></h4>
+        <h4>Living HIV+ Since: <%= @current_user.diagnosis_year %></h4>
       </div>
     </div>
   </div>
