@@ -27,7 +27,7 @@
           <li> <%= link_to "Block & report", user_characteristic_path(current_user), class: "nav-link" %> </li>
           <li> <%= link_to "Unmatch", match_path(@match), method: :delete, class: "nav-link" %> </li>
           <li> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> </li>
-          <li> <button type="button" id="modal-link", data-toggle="modal" data-target="#ModalRequest">Reveal request</button> </li>
+          <li> <button type="button" id="modal-link", data-toggle="modal" data-target="#ModalRequest" style="border-color: white; color: rgba(0, 0, 0, 0.5)">Reveal request</button> </li>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>

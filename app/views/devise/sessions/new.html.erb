@@ -10,11 +10,10 @@
         </div>
         <div class="form-actions align-self-baseline">
           <!-- MODAL TRIGGER -->
-          <button type="button" class="log-in" data-toggle="modal" data-target="#exampleModalCenter">
+          <button type="button" class="log-in" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: transparent; border-color: transparent;">
             Login
           </button>
           <!-- MODAL TRIGGER END -->
-          <%#= f.button :submit, "Login", id: 'login' %>
         </div>
       </div>
     </div>
@@ -46,7 +45,9 @@
     <div class="row h-75">
       <div class="col-xs-12 col-sm-4 offset-sm-4 align-self-center" style="text-align:center;">
         <h1 id="home-logo">HiVie</h1>
-        <h3>Live Life. In Love.</h3>
+        <h3>It's not about if you live, <br/>
+          it's about how you live.
+        </h3>
         <div class="shared-links" style=" opacity:.6">
           <%#= render "devise/shared/links" %>
           <!-- Need to delete the 'log in' blue link that comes with devise -->
