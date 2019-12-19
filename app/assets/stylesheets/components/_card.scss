@@ -9,6 +9,7 @@
   align-items: center;
   background-image: linear-gradient(rgba(0,0,0,-0.8),rgba(0,0,0,0.5));
   padding-top: 30%;
+  border-radius: 8px;
 }
 
 .ml-2, .mx-2 {
@@ -19,9 +20,12 @@
   position: relative;
 }
 
-.card-infos-users .card-infos-users-age {
-  // position: absolute;
-}
+// .card-infos-users {
+//   // position: absolute;
+//   &.card-infos-users-age {
+
+//   }
+// }
 
 // .card-img-top {
 //   background: linear-gradient(to top, black, 80%, black) !important;
@@ -32,6 +36,7 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+
   .match-preview {
     flex: 0 0 auto;
   }
@@ -41,7 +46,11 @@
   background-size: cover;
   background-position: center;
   height: 400px;
+  border-radius: 8px;
 
+  img {
+  border-radius: 8px;
+  }
 }
 
 
