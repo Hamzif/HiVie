@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+  layout "match_layout", only: :show
   skip_before_action :next_user, only: :create
   def index
     # list of all matches from which, user can create single chat conversation
