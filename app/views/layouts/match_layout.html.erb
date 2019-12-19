@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -12,22 +12,11 @@
   <body>
 
 
-    <!-- main container for all pages except login page -->
-    <% unless current_page?(new_user_session_path) %>
-      <div class="main-container-hivie">
-        <%= render 'shared/navbar' %>
-        <%= render 'shared/flashes' %>
-        <%= yield %>
-      </div>
-    <% else %>
-      <%= yield %>
-    <% end %>
+    <!-- main container for all pages except It's a Match Show Page -->
+    <%= yield %>
     <!-- end main container -->
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
-
-
-

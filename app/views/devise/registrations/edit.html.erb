@@ -31,7 +31,7 @@
       <%= f.input :city, required: true, autofocus: true, input_html: { autocomplete: "city" }%>
       <%= f.input :gender, required: true, autofocus: true, collection: ["Male", "Female", "Non-binary"]%>
       <%= f.input :diagnosis_year, label: 'Living HIV+ Since:', placeholder: '2008', input_html: { min: '1950', step: 'any', max: 'Date.today.year' } %>
-      <%= f.input :birthday, as: :date, start_year: Date.today.year - 87, end_year: Date.today.year - 5, order: [:day, :month, :year], required: true %>
+      <%= f.input :birthday, as: :date, start_year: Date.today.year - 60, end_year: Date.today.year - 18, order: [:day, :month, :year], required: true %>
       <%= f.input :bio %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
