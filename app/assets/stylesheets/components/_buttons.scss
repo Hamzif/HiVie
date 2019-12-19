@@ -8,6 +8,7 @@
 // Primary Button
 .btn-pink {
   background-color: $hivie-purple;
+  font-family: Source Sans Pro;
   color: white !important;
   height: 50px !important;
   border-radius: 8px !important;
@@ -34,7 +35,8 @@
 }
 
 #btn-home {
-  width: 80% !important;
+  width: 100% !important;
+  color: $hivie-logo !important;
 }
 
 .log-in {
