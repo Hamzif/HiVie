@@ -1,11 +1,10 @@
 <div class="card-matching">
 
   <div>
-      <div class="bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
-        <%= cl_image_tag @user.photo, height: 400, width: 344, crop: :fill, class: "card-img-top"%>
+      <div class="bg-img" style="background-image: url(<%= cloudinary_url(@user.photo) %>)">
       </div>
   </div>
-</div>
+
 
   <div class="card-infos-users ml-2">
     <div>
