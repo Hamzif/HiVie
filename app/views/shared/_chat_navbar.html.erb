@@ -10,7 +10,7 @@
     <% if @match.revealed? %>
       <%= cl_image_tag @match.matched_user(current_user).photo, crop: :fill, class: "avatar-small" %>
     <% else %>
-      <div class="avatar-small" style="background-size: cover; background-image: url('<%= cloudinary_url(@match.matched_user(current_user).photo, crop: :fill, :transformation => {:effect => "blur:800", gravity: :face}) %>')"></div>
+      <%= cl_image_tag @match.matched_user(current_user).photo, transformation: {:effect => "blur:800"}, class: 'avatar-small'%>
     <% end %>
 
     <%= link_to user_path(@match.matched_user(current_user)), class: "navbar-brand align-items-center mr-0" do %>
