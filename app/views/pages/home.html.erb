@@ -1,15 +1,50 @@
-<div class="container">
-  <div class="row h-100">
-    <div class="col my-auto">
-      <h2 class="text-center">Welcome to HiVie</h2>
-
-      <div class="text-center">
-        <h3>Keep your profile up to date and start swiping !</h3>
+<div class="card-matching">
+  <h3 class="profile-header">Your Profile</h3>
+  <div>
+      <div class="bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
+        <%= cl_image_tag @current_user.photo, height: 450, width: 344, crop: :fill, class: "card-img-top"%>
       </div>
+  </div>
 
-      <% if user_signed_in? && @next_user.present? %>
-        <%= link_to "Let's swipe!", user_path(@next_user), class: "btn button btn-pink mt-5"  %>
-      <% end %>
+  <div class="card-infos-users ml-2">
+    <div>
+      <div class="alias-font ml-3 mt-1">
+        <%= @current_user.username %>, <%= @current_user.age %>
+      </div>
+      <div class="geo-location-font ml-3 mb-1">
+        <%= @current_user.city %>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- need to add the truncate to shorten the bio -->
+  <div class="bio-font mt-3 mb-3">
+    <div class="10">
+    <% if @current_user.bio %>
+      <%= @current_user.bio %>
+    <% else %>
+      " "
+    <% end %>
+    </div>
+  </div>
+
+
+    <% unless @current_user.characteristics.nil? %>
+      <% @current_user.characteristics.each do |char| %>
+        <div class="btn btn-pill active">
+          <%= char.name %>
+        </div>
+      <% end %>
+    <% end %>
+
+
+<div>
+  <% if user_signed_in? && @next_user.present? %>
+  <%= link_to "Let's swipe!", user_path(@next_user), class: "btn button btn-pink mt-5"  %>
+  <% end %>
+</div>
+
+<!-- <div class="container">
+  <div class="row h-100">
+    <div class="col my-auto"> -->
