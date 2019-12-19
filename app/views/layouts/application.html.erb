@@ -13,7 +13,7 @@
 
 
     <!-- main container for all pages except login page -->
-    <% unless current_page?(new_user_session_path)%>
+    <% unless current_page?(new_user_session_path) || current_page?(match_path) %>
       <div class="main-container-hivie">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>

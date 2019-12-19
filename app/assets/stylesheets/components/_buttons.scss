@@ -8,7 +8,7 @@
 // Primary Button
 .btn-pink {
   background-color: $hivie-purple;
-  color: white;
+  color: white !important;
   height: 50px !important;
   border-radius: 8px !important;
 }
@@ -24,7 +24,8 @@
   height: 45px;
   width: 45px;
   border-radius: 50%;
-  color: $hivie-purple;
+  color: $hivie-purple !important;
+  border-color: $hivie-purple;
 }
 
 .btn {
