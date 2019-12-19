@@ -7,7 +7,7 @@
           <div class="col">
             <div class= "match-avatar">
               <%= link_to match_messages_path(match) do %>
-                <div class="match-username" style="text-align: center; margin-top: 1px">
+                <div style="text-align: center; margin-top: 1px">
                 <% if match.user_one == current_user %>
                     <div>
                       <% if match.revealed? %>
