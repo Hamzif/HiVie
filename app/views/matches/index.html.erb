@@ -7,25 +7,29 @@
           <div class="col">
             <div class= "match-avatar">
               <%= link_to match_messages_path(match) do %>
-                <div class="match-username" style="text-align: center; margin-top: 1px">
+                <div style="text-align: center; margin-top: 1px">
                 <% if match.user_one == current_user %>
                     <div>
                       <% if match.revealed? %>
-                       <%= cl_image_tag match.user_two.photo, class: "avatar-bordered inline-block" %>
+                       <%= cl_image_tag match.user_two.photo, class: "avatar-match-list inline-block" %>
                       <% else %>
-                        <%= cl_image_tag match.user_two.photo, transformation: {:effect => "blur:800"}, class: 'avatar-bordered inline-block'%>
+                        <%= cl_image_tag match.user_two.photo, transformation: {:effect => "blur:800"}, class: 'avatar-match-list inline-block'%>
                       <% end %>
                     </div>
-                  <p> <%= match.user_two.username %></p>
+                  <div class="match-alias">
+                    <h5> <%= match.user_two.username %></h5>
+                  </div>
                 <% else %>
                    <div>
                     <% if match.revealed? %>
-                      <%= cl_image_tag match.user_one.photo, class: "avatar-bordered inline-block" %>
+                      <%= cl_image_tag match.user_one.photo, class: "avatar-match-list inline-block" %>
                     <% else %>
-                      <%= cl_image_tag match.user_one.photo, transformation: {:effect => "blur:800"}, class: 'avatar-bordered inline-block'%>
+                      <%= cl_image_tag match.user_one.photo, transformation: {:effect => "blur:800"}, class: 'avatar-match-list inline-block'%>
                       <% end %>
                     </div>
-                  <p> <%= match.user_one.username %></p>
+                  <div class="match-alias">
+                    <h5> <%= match.user_one.username %></h5>
+                  </div>
                 <% end %>
                 </div>
               <% end %>
@@ -40,7 +44,7 @@
     <h3 class="profile-header" style="text-align: left; border-bottom: 1px solid rgb(70,44,114, 0.8); margin: 0px 0px">Conversations</h3>
         <% @conversations.each do |match| %>
          <%= link_to match_messages_path(match) do %>
-          <div class="preview-message-card d-flex justify-content-start"  style="border-bottom: 1px solid RGB(70,44,114, 0.4)">
+          <div class="preview-message-card d-flex justify-content-start"  style="border-bottom: 1px solid RGB(70,44,114, 0.2)">
             <% if match.user_one == current_user %>
               <div>
                 <% if match.revealed? %>

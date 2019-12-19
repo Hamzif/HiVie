@@ -108,7 +108,7 @@ user_1 = User.create(email: 'hamza@gmail.com', password: "password", min_age: 10
 
 puts "created user_1"
 
-UserCharacteristic.create(user: user_1, characteristic: characteristic_10)
+UserCharacteristic.create(user: user_1, characteristic: Characteristic.all.sample)
 UserCharacteristic.create(user: user_1, characteristic: characteristic_20)
 UserCharacteristic.create(user: user_1, characteristic: characteristic_1)
 UserCharacteristic.create(user: user_1, characteristic: characteristic_2)
