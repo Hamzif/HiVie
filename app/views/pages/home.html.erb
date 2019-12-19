@@ -34,7 +34,7 @@
 
     <% unless @current_user.characteristics.nil? %>
       <% @current_user.characteristics.each do |char| %>
-        <div class="btn btn-pill active ">
+        <div class="btn btn-pill active" id="pills-profiles">
           <%= char.name %>
         </div>
       <% end %>
