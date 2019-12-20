@@ -192,13 +192,14 @@ puts "created user_19"
 user_26 = User.create(email: 'claire@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Solange', last_name: 'Knowles', username: 'DogLover',  city: 'Barcelona', birthday: '17/08/1987'.to_date, gender: 'Female', sex_pref: 'Male', distance_pref: 7, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575632170/user_profile_images/T02NE0241-UPLK2131N-e1b9f6081978-512_bcsftl.png', bio: "Half Spanish, Half Italian. Diagnosed last year and new to dating but hope to meet some cool people, like you!")
 puts "created user_26"
 
-
-# Characteristic.all.sample
-User.all.sample do
-  12.times do
+User.all.each do |user|
+  10.times do
     UserCharacteristic.create(user: user, characteristic: Characteristic.all.sample)
   end
 end
+
+# Characteristic.all.sample
+
 
 # MATCHES BELOW
 match_1 = Match.create(user_two_id: user_1.id, user_one_id: user_3.id, status: 'initiated')
