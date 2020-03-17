@@ -1,10 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 Match.destroy_all
 User.destroy_all
@@ -200,9 +195,7 @@ puts "created user_25"
 user_26 = User.create(email: 'claire@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Solange', last_name: 'Knowles', username: 'DogLover',  city: 'Barcelona', birthday: '17/08/1987'.to_date, gender: 'Female', sex_pref: 'Male', distance_pref: 7, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576500832/HiVie/kakgltew0mhlev3zersk.jpg', bio: "Half Spanish, Half Italian. Diagnosed last year and new to dating but hope to meet some cool people, like you!")
 puts "created user_26"
 
-
-# Characteristic.all.sample
-User.all.sample do
+User.all.each do |user|
   10.times do
     UserCharacteristic.create(user: user, characteristic: Characteristic.all.sample)
   end
@@ -234,7 +227,3 @@ match_16 = Match.create(user_two_id: user_3.id, user_one_id: user_6.id, status: 
 match_17 = Match.create(user_two_id: user_3.id, user_one_id: user_7.id, status: 'initiated')
 match_18 = Match.create(user_two_id: user_3.id, user_one_id: user_11.id, status: 'initiated')
 match_19 = Match.create(user_two_id: user_3.id, user_one_id: user_12.id, status: 'initiated')
-
-
-
-
