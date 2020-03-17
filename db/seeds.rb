@@ -103,7 +103,7 @@ characteristic_80 = Characteristic.create(category: 'Sports', name: 'Yoga')
 puts "sports seeds created"
 
 
-user_1 = User.create(email: 'hamza@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Hamza', last_name: 'Ben Mbarek', username: 'Hamzification',  city: 'Barcelona', birthday: '08/04/1994'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2017, remote_photo_url:'https://res.cloudinary.com/kl3000/image/upload/v1575631890/user_profile_images/T02NE0241-UPNR72TP0-ae9ed4ff472c-512_lfwhae.jpg',
+user_1 = User.create(email: 'hamza@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Hamza', last_name: 'Ben Mbarek', username: 'Hamzification',  city: 'Barcelona', birthday: '08/04/1994'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2017, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576841156/HiVie/xmkqfdpcauuatzav89az.jpg',
   bio: 'I haven’t dated much in recent years because I’ve been so focused on my career. Now I’m ready to meet the person who will pull my head out of the books and bring me a bit of happiness.')
 puts "created user_1"
 
