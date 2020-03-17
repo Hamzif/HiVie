@@ -107,11 +107,11 @@ user_1 = User.create(email: 'hamza@gmail.com', password: "password", min_age: 18
 puts "created user_1"
 
 # MALE
-user_2 = User.create(email: 'byebyeangelina@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Brad', last_name: 'Pitt', username: 'Bogoss94XXX',  city: 'Barcelona', birthday: '25/06/1975'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 5, diagnosis_year: 2004, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576842791/HiVie/xpngqgfq8gaipgovuxdx.jpg', bio: 'I work in business management and I’m afraid I’m becoming a very boring single man. I’m looking for a nice partner to help me mix it up.')
+user_2 = User.create(email: 'brad@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Brad', last_name: 'Pitt', username: 'Mr.Right',  city: 'Barcelona', birthday: '25/06/1975'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 5, diagnosis_year: 2004, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576842791/HiVie/xpngqgfq8gaipgovuxdx.jpg', bio: 'I work in business management and I’m afraid I’m becoming a very boring single man. I’m looking for a nice partner to help me mix it up.')
 puts "created user_2"
 
 # FEMALE
-user_3 = User.create(email: 'becca@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Rebecca', last_name: 'Jones', username: 'Becks',  city: 'Barcelona', birthday: '17/03/1997'.to_date, gender: 'Female', sex_pref: 'Male', distance_pref: 8, diagnosis_year: 2016, remote_photo_url: 'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576842797/HiVie/xunmghudhlt88othbc2x.jpg',
+user_3 = User.create(email: 'becca@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Rebecca', last_name: 'Jones', username: 'Becks4You',  city: 'Barcelona', birthday: '17/03/1997'.to_date, gender: 'Female', sex_pref: 'Male', distance_pref: 8, diagnosis_year: 2016, remote_photo_url: 'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576842797/HiVie/xunmghudhlt88othbc2x.jpg',
  bio: 'Grew up in the United State. Moved to Barcelona 5 years ago. Living with HIV for a few years and looking for a community of support and maybe even find love.')
 puts "created user_3"
 
@@ -140,11 +140,11 @@ user_9 = User.create(email: 'sandra@gmail.com', password: "password", min_age: 1
 puts "created user_9"
 
 # FEMALE
-user_10 = User.create(email: 'scarlett@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Scarlett', last_name: 'Johansson', username: 'Scarlett',  city: 'Barcelona', birthday: '11/06/1988'.to_date, gender: 'Female', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576692914/HiVie/zcyore8jdm0hzdsyx9mm.jpg', bio: " Barefoot, crafty, gardener. I like to connect intellectually and emotionally first and hope you find me interesting.")
+user_10 = User.create(email: 'scarlett@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Scarlett', last_name: 'Johansson', username: 'Ms.J',  city: 'Barcelona', birthday: '11/06/1988'.to_date, gender: 'Female', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576692914/HiVie/zcyore8jdm0hzdsyx9mm.jpg', bio: " Barefoot, crafty, gardener. I like to connect intellectually and emotionally first and hope you find me interesting.")
 puts "created user_10"
 
 # MALE
-user_11 = User.create(email: 'sima@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Alxandru', last_name: 'Sima', username: 'Simax',  city: 'Barcelona', birthday: '28/09/1998'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576777433/HiVie/z1hlemfifyqtl0tqjlqe.jpg', bio: "I wear my heart on my sleeve, so what you see is what you get. I laugh and smile a lot, and love someone who can make me do just that.")
+user_11 = User.create(email: 'sima@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Alexandru', last_name: 'Sima', username: 'SimAx',  city: 'Barcelona', birthday: '28/09/1998'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576777433/HiVie/z1hlemfifyqtl0tqjlqe.jpg', bio: "I wear my heart on my sleeve, so what you see is what you get. I laugh and smile a lot, and love someone who can make me do just that.")
 puts "created user_11"
 
 # MALE
@@ -185,7 +185,7 @@ puts "created user_20"
 user_21 = User.create(email: 'nico@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Nico', last_name: 'Carver', username: 'Momo',  city: 'Barcelona', birthday: '14/12/1988'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 20, diagnosis_year: 2009, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576777430/HiVie/kq3cwdvwxbqvlptmbuan.jpg', bio: "Just moved to the city and looking for a partner to explore all the best restaurants and bars. Any recommendations?")
 puts "created user_21"
 # MALE
-user_22 = User.create(email: 'isac@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Dan', last_name: 'Tico', username: 'Dannydu38',  city: 'Barcelona', birthday: '25/07/1985'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 8, diagnosis_year: 2004, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576614164/HiVie/yklaswbkf6cafjgkuybz.jpg', bio: "Your personal guide to Barcelona. Can also teach you Spanish. Let's connect over coffee or beers.")
+user_22 = User.create(email: 'isac@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Dan', last_name: 'Tico', username: 'DannyDu38',  city: 'Barcelona', birthday: '25/07/1985'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 8, diagnosis_year: 2004, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576614164/HiVie/yklaswbkf6cafjgkuybz.jpg', bio: "Your personal guide to Barcelona. Can also teach you Spanish. Let's connect over coffee or beers.")
 puts "created user_22"
 # MALE
 user_23 = User.create(email: 'kevin@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Kevin', last_name: 'Johnson', username: 'KingKev',  city: 'Barcelona', birthday: '17/03/1992'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 8, diagnosis_year: 2013, remote_photo_url: 'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576597715/HiVie/xpclqgdsehdpxds2pdub.png', bio: "I'm a grad student. Funny and charming. If you're open minded we'll get along.")
@@ -194,7 +194,7 @@ puts "created user_23"
 user_24 = User.create(email: 'martin@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Martin', last_name: 'Potie', username: 'GoodGuy',  city: 'Barcelona', birthday: '21/02/1993'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 7, diagnosis_year: 1990, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576500852/HiVie/k10v1vdnqhxsksxjkyrz.jpg', bio: "New to HiVie. Thankful for some anonymity. Slow to open up but excited to meet new people and maybe find love.")
 puts "created user_24"
 # MALE
-user_25 = User.create(email: 'pablo@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Humber', last_name: 'Line', username: 'humbtidumti',  city: 'Barcelona', birthday: '13/10/1990'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 7, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576508002/HiVie/y7vddgxcjxq5mkyeyx7p.jpg', bio: "Travel is my passion. Where would you like to go on our first vacation?")
+user_25 = User.create(email: 'pablo@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Tim', last_name: 'Line', username: 'TimmyBoy',  city: 'Barcelona', birthday: '13/10/1990'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 7, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576508002/HiVie/y7vddgxcjxq5mkyeyx7p.jpg', bio: "Travel is my passion. Where would you like to go on our first vacation?")
 puts "created user_25"
 # FEMALE
 user_26 = User.create(email: 'claire@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Solange', last_name: 'Knowles', username: 'DogLover',  city: 'Barcelona', birthday: '17/08/1987'.to_date, gender: 'Female', sex_pref: 'Male', distance_pref: 7, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576500832/HiVie/kakgltew0mhlev3zersk.jpg', bio: "Half Spanish, Half Italian. Diagnosed last year and new to dating but hope to meet some cool people, like you!")
@@ -227,6 +227,13 @@ match_12 = Match.create(user_two_id: user_1.id, user_one_id: user_26.id, status:
 
 match_13 = Match.create(user_one_id: user_1.id, user_two_id: user_14.id, status: 'initiated')
 match_14 = Match.create(user_one_id: user_1.id, user_two_id: user_16.id, status: 'initiated')
+
+# USER 3 MATCHES
+match_15 = Match.create(user_two_id: user_3.id, user_one_id: user_2.id, status: 'initiated')
+match_16 = Match.create(user_two_id: user_3.id, user_one_id: user_6.id, status: 'initiated')
+match_17 = Match.create(user_two_id: user_3.id, user_one_id: user_7.id, status: 'initiated')
+match_18 = Match.create(user_two_id: user_3.id, user_one_id: user_11.id, status: 'initiated')
+match_19 = Match.create(user_two_id: user_3.id, user_one_id: user_12.id, status: 'initiated')
 
 
 
