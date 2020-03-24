@@ -29,6 +29,13 @@
             </button>
           </div>
           <div class="modal-body">
+            <div class="modal-alert">
+              <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+              <p class="modal-alert-message">This site is under construction. <br> Feel free to register OR explore an existing account with:</p>
+              <p class="demo-info">Email: demo@mail.com</p>
+              <p class="demo-info">Password: 'password'</p>
+              <br>
+            </div>
             <%= f.input :email, required: false, autofocus: true, label: false, placeholder: 'Email', input_html: { autocomplete: "email" } %>
             <%= f.input :password, required: false, label: false, placeholder: 'Password', input_html: { autocomplete: "current-password", class: "form-control:focus form-login" } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
