@@ -4,3 +4,19 @@
   right: 16px;
   z-index: 1000;
 }
+
+.modal-alert {
+  text-align: center;
+  .modal-alert-message{
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.fa-exclamation-triangle {
+  color: $hivie-pink;
+}
+
+.demo-info {
+  margin: 0;
+}
