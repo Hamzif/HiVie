@@ -29,7 +29,6 @@
     </div>
   </div>
 
-
     <% unless @current_user.characteristics.nil? %>
       <% @current_user.characteristics.each do |char| %>
         <div class="btn btn-pill active" id="pills-profiles">
@@ -44,7 +43,3 @@
   <%= link_to "Let's swipe!", user_path(@next_user), class: "btn button btn-pink mt-5"  %>
   <% end %>
 </div>
-
-<!-- <div class="container">
-  <div class="row h-100">
-    <div class="col my-auto"> -->
