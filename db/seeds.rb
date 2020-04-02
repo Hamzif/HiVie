@@ -127,7 +127,7 @@ user_7 = User.create(email: 'cristo@gmail.com', password: "password", min_age: 1
 puts "created user_7"
 
 # FEMALE
-user_8 = User.create(email: 'dan@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Dan', last_name: 'Smith', username: 'DanTheMan',  city: 'Barcelona', birthday: '17/03/1987'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1576841175/HiVie/jsftgcnoe4ay83ligbma.jpg', bio: "My top three bucket list vacations are Iceland, Ireland, and Greece. Where have you traveled? Where would you like to go?")
+user_8 = User.create(email: 'dan@gmail.com', password: "password", min_age: 18, max_age: 50, first_name: 'Dan', last_name: 'Smith', username: 'DanTheMan',  city: 'Barcelona', birthday: '17/03/1987'.to_date, gender: 'Male', sex_pref: 'Female', distance_pref: 10, diagnosis_year: 2018, remote_photo_url:'https://res.cloudinary.com/dlykbtzhf/image/upload/v1585073350/nvxjyyqpkxlkkutbqe0w.png', bio: "My top three bucket list vacations are Iceland, Ireland, and Greece. Where have you traveled? Where would you like to go?")
 puts "created user_8"
 
 # FEMALE
